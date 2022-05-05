@@ -2,9 +2,21 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+### ENV
+
+ENV is part of gitignore. Go to env.example then paste all the contents to your env.
+
 ## Available Scripts
 
 In the project directory, you can run:
+
+### `npm run serve-json`
+
+Runs the json server instance. (Run this together with npm start)\
+
+## `Note:`
+
+This is for demo purposes. DB data should not be in the frontend.\
 
 ### `npm start`
 
@@ -28,6 +40,18 @@ The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
 See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+
+### `npm run lint`
+
+Validate eslint rules. Included in pre-commit
+
+### `npm run prettier:check`
+
+Validate prettier rules. Included in pre-commit
+
+### `npm run type:check`
+
+Validate typing. Included in pre-push
 
 ### `npm run eject`
 
