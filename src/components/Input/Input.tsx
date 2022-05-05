@@ -12,7 +12,6 @@ const Input = ({
 	label,
 	name,
 	disabled,
-	noController = false,
 	required = false,
 	placeholder,
 	fullWidth,
@@ -28,7 +27,7 @@ const Input = ({
 }: IProps) => {
 	const handleChange = (
 		e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-		onChange: (...event: any[]) => void
+		onChange: (...event: any[]) => void // to do: change any type
 	) => {
 		const val = e.target.value
 
@@ -51,43 +50,7 @@ const Input = ({
 		}
 	}
 
-	return noController ? (
-		<StyledRoot>
-			{label && (
-				<StyledLabel htmlFor={name} error={Boolean(error)}>
-					{label} <span>{required && '*'}</span>
-				</StyledLabel>
-			)}
-			<StyledInput
-				id={name}
-				name={name}
-				error={Boolean(error)}
-				defaultValue={defaultValue}
-				placeholder={placeholder}
-				type={type}
-				size='small'
-				helperText=''
-				fullWidth={fullWidth}
-				disabled={disabled}
-				inputProps={{
-					maxLength,
-				}}
-				// eslint-disable-next-line react/jsx-no-duplicate-props
-				InputProps={{
-					startAdornment: startIcon && (
-						<InputAdornment position='start'>{startIcon}</InputAdornment>
-					),
-					endAdornment: endIcon && (
-						<InputAdornment position='start'>{endIcon}</InputAdornment>
-					),
-				}}
-				multiline={multiline}
-				rows={rows}
-				hiddenLabel
-				inputRef={inputRef}
-			/>
-		</StyledRoot>
-	) : (
+	return (
 		<Controller
 			name={name}
 			control={control}

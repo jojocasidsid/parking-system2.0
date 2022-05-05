@@ -10,7 +10,6 @@ export interface IProps {
 	fullWidth?: boolean
 	label?: string
 	name: string
-	noController?: boolean
 	placeholder?: string
 	required?: boolean
 	type?: string

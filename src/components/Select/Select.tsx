@@ -14,7 +14,7 @@ import {
 
 const Select = ({
 	control,
-	children,
+
 	defaultValue,
 	disabled,
 	error,
@@ -22,66 +22,47 @@ const Select = ({
 	label,
 	required = false,
 	name,
-	noController = false,
+
 	options,
-}: IProps) =>
-	noController ? (
-		<StyledRoot>
-			{label && (
-				<StyledLabel htmlFor={name}>
-					{label} <span>{required && '*'}</span>
-				</StyledLabel>
-			)}
-			<StyledSelect
-				name={name}
-				id={name}
-				disabled={disabled}
-				error={Boolean(error)}
-				fullWidth={fullWidth}
-			>
-				{children}
-				{/* use MenuItems from material UI to declare children */}
-			</StyledSelect>
-		</StyledRoot>
-	) : (
-		<Controller
-			name={name}
-			control={control}
-			defaultValue={defaultValue}
-			render={({ field: { onChange, onBlur, value } }) => (
-				<StyledRoot>
-					{label && (
-						<StyledLabel htmlFor={name}>
-							{label} <span>{required && '*'}</span>
-						</StyledLabel>
+}: IProps) => (
+	<Controller
+		name={name}
+		control={control}
+		defaultValue={defaultValue}
+		render={({ field: { onChange, onBlur, value } }) => (
+			<StyledRoot>
+				{label && (
+					<StyledLabel htmlFor={name}>
+						{label} <span>{required && '*'}</span>
+					</StyledLabel>
+				)}
+				<StyledSelect
+					id={name}
+					disabled={disabled}
+					onChange={onChange}
+					onBlur={onBlur}
+					value={value === -1 ? '' : value} // Workaround for out-of-range warnings, initial values for select inputs of number types are -1 as empty strings are not assignable
+					fullWidth={fullWidth}
+					// eslint-disable-next-line react/no-unstable-nested-components
+					IconComponent={(props) => (
+						<StyledArrowDown
+							src='/assets/arrow-down.svg'
+							alt='arrow-down'
+							{...props}
+						/>
 					)}
-					<StyledSelect
-						id={name}
-						disabled={disabled}
-						onChange={onChange}
-						onBlur={onBlur}
-						value={value === -1 ? '' : value} // Workaround for out-of-range warnings, initial values for select inputs of number types are -1 as empty strings are not assignable
-						fullWidth={fullWidth}
-						// eslint-disable-next-line react/no-unstable-nested-components
-						IconComponent={(props) => (
-							<StyledArrowDown
-								src='/assets/arrow-down.svg'
-								alt='arrow-down'
-								{...props}
-							/>
-						)}
-						error={Boolean(error)}
-					>
-						{options.map((row, id) => (
-							<MenuItem key={id} value={row.value}>
-								{row.label}
-							</MenuItem>
-						))}
-					</StyledSelect>
-					<StyledFormHelper error={Boolean(error)}>{error}</StyledFormHelper>
-				</StyledRoot>
-			)}
-		/>
-	)
+					error={Boolean(error)}
+				>
+					{options.map((row, id) => (
+						<MenuItem key={id} value={row.value}>
+							{row.label}
+						</MenuItem>
+					))}
+				</StyledSelect>
+				<StyledFormHelper error={Boolean(error)}>{error}</StyledFormHelper>
+			</StyledRoot>
+		)}
+	/>
+)
 
 export default Select
