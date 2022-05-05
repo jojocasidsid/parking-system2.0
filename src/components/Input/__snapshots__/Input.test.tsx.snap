@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Input component should create snapshot correctly 1`] = `
+<div
+  className="css-evn1e9"
+>
+  <label
+    className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-1p8am30-MuiFormLabel-root-MuiInputLabel-root"
+    htmlFor="test"
+  >
+    Test
+     
+    <span>
+      *
+    </span>
+  </label>
+  <div
+    className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-lp6u9r-MuiFormControl-root-MuiTextField-root"
+  >
+    <div
+      className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-s1ipka-MuiInputBase-root-MuiOutlinedInput-root"
+      onClick={[Function]}
+    >
+      <input
+        aria-invalid={false}
+        autoFocus={false}
+        className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+        disabled={false}
+        id="test"
+        name="test"
+        onAnimationStart={[Function]}
+        onBlur={[Function]}
+        onChange={[Function]}
+        onFocus={[Function]}
+        placeholder="test"
+        required={false}
+        type="text"
+        value=""
+      />
+      <fieldset
+        aria-hidden={true}
+        className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+      >
+        <legend
+          className="css-hdw1oc"
+        >
+          <span
+            className="notranslate"
+          >
+            ​
+          </span>
+        </legend>
+      </fieldset>
+    </div>
+  </div>
+</div>
+`;

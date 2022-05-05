@@ -1,6 +1,7 @@
 import React from 'react'
 import { Controller } from 'react-hook-form'
 
+import { MenuItem } from '@mui/material'
 import { IProps } from './types'
 
 import {
@@ -22,6 +23,7 @@ const Select = ({
 	required = false,
 	name,
 	noController = false,
+	options,
 }: IProps) =>
 	noController ? (
 		<StyledRoot>
@@ -70,8 +72,11 @@ const Select = ({
 						)}
 						error={Boolean(error)}
 					>
-						{children}
-						{/* use MenuItems from material UI to declare children */}
+						{options.map((row, id) => (
+							<MenuItem key={id} value={row.value}>
+								{row.label}
+							</MenuItem>
+						))}
 					</StyledSelect>
 					<StyledFormHelper error={Boolean(error)}>{error}</StyledFormHelper>
 				</StyledRoot>

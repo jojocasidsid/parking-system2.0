@@ -91,6 +91,7 @@ const Input = ({
 		<Controller
 			name={name}
 			control={control}
+			data-testid={name}
 			render={({ field: { onChange, onBlur, value } }) => (
 				<StyledRoot>
 					{label && (
