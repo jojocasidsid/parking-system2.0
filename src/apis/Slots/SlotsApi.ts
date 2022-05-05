@@ -5,7 +5,12 @@ const SlotsAPI = {
 	list: () => api.get('/slots'),
 
 	parkSlot: (id: number, type: string, vehicle: string) => {
-		const requestData = { parked: vehicle, parkedType: type, dateTime: moment() }
+		const requestData = {
+			parked: vehicle,
+			parkedType: type,
+			parkTime: moment(),
+			unparkTime: null,
+		}
 		return api.patch(`/slots/${id}`, requestData)
 	},
 

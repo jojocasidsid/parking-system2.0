@@ -12,13 +12,24 @@ import { ThumbnailWrapper, ActionWrapper, StyledImage } from './styles'
 const Slot = ({ data, handleLeave }: IProps) => {
 	const [timeDiff, setTimeDiff] = useState(0)
 
+	const [isLeft, setIsLeft] = useState(false)
+
 	useEffect(() => {
+		const dateNow = moment()
 		if (data.parkTime) {
 			const dateParked = moment(data.parkTime)
-			const dateNow = moment()
 			const timeBetween = moment.duration(dateNow.diff(dateParked))
 
 			setTimeDiff(Math.ceil(timeBetween.asHours()))
+		}
+
+		if (data.unparkTime) {
+			const dateUnparked = moment(data.unparkTime)
+			const timeBetween = moment.duration(dateNow.diff(dateUnparked))
+
+			if (Number(timeBetween) >= 0) {
+				setIsLeft(true)
+			}
 		}
 	}, [data])
 
@@ -29,7 +40,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			</div>
 			<Typography variant='body'>
 				Slot:{' '}
-				{data.parked
+				{data.parked && !isLeft
 					? `Type ${numbertToType(data.parkedType)} vehicle is parked`
 					: 'Available'}
 			</Typography>
@@ -42,7 +53,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			<Typography variant='body'>Exit B: {data.exitB} units</Typography>
 			<Typography variant='body'>Exit C: {data.exitC} units</Typography>
 
-			{data.parked ? (
+			{data.parked && !isLeft ? (
 				<>
 					<Typography variant='body'>Hours: {timeDiff}</Typography>
 					<Typography variant='body'>
@@ -54,7 +65,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			)}
 
 			<ActionWrapper>
-				{data.parked ? (
+				{data.parked && !isLeft ? (
 					<Button variant='contained' onClick={() => handleLeave(data.id)}>
 						Leave
 					</Button>
