@@ -12,11 +12,10 @@ In the project directory, you can run:
 
 ### `npm run serve-json`
 
-Runs the json server instance. (Run this together with npm start)\
+Runs the json server instance. (Run this together with npm start)
 
-## `Note:`
-
-This is for demo purposes. DB data should not be in the frontend.\
+Note:
+This is for demo purposes. DB data should not be in the frontend.
 
 ### `npm start`
 
