@@ -27,7 +27,7 @@ const Input = ({
 }: IProps) => {
 	const handleChange = (
 		e: React.ChangeEvent<HTMLTextAreaElement | HTMLInputElement>,
-		onChange: (...event: any[]) => void // to do: change any type
+		onChange: (...event: unknown[]) => void
 	) => {
 		const val = e.target.value
 
