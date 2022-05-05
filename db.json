@@ -1,0 +1,293 @@
+{
+	"slots": [
+		{
+			"id": 1,
+			"exitA": 3,
+			"exitB": 7,
+			"exitC": 7,
+			"type": 1,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 2,
+			"exitA": 4,
+			"exitB": 6,
+			"exitC": 6,
+			"type": 3,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 3,
+			"exitA": 5,
+			"exitB": 5,
+			"exitC": 5,
+			"type": 1,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 4,
+			"exitA": 6,
+			"exitB": 4,
+			"exitC": 6,
+			"type": 3,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 5,
+			"exitA": 7,
+			"exitB": 3,
+			"exitC": 7,
+			"type": 2,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 6,
+			"exitA": 2,
+			"exitB": 6,
+			"exitC": 6,
+			"type": 2,
+			"vehicle": "",
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 7,
+			"exitA": 3,
+			"exitB": 5,
+			"exitC": 5,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 8,
+			"exitA": 4,
+			"exitB": 4,
+			"exitC": 4,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 9,
+			"exitA": 5,
+			"exitB": 3,
+			"exitC": 5,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 10,
+			"exitA": 6,
+			"exitB": 2,
+			"exitC": 6,
+			"type": 3,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 11,
+			"exitA": 1,
+			"exitB": 5,
+			"exitC": 5,
+			"type": 3,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 12,
+			"exitA": 2,
+			"exitB": 4,
+			"exitC": 4,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 13,
+			"exitA": 3,
+			"exitB": 3,
+			"exitC": 3,
+			"type": 3,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 14,
+			"exitA": 4,
+			"exitB": 2,
+			"exitC": 4,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 15,
+			"exitA": 5,
+			"exitB": 1,
+			"exitC": 5,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 16,
+			"exitA": 2,
+			"exitB": 6,
+			"exitC": 4,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 17,
+			"exitA": 3,
+			"exitB": 5,
+			"exitC": 3,
+			"type": 3,
+			"vehicle": "",
+			"parkedType": 0,
+
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 18,
+			"exitA": 4,
+			"exitB": 4,
+			"exitC": 2,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 19,
+			"exitA": 5,
+			"exitB": 3,
+			"exitC": 3,
+			"type": 3,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 20,
+			"exitA": 6,
+			"exitB": 2,
+			"exitC": 4,
+			"type": 2,
+			"vehicle": "",
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 21,
+			"exitA": 3,
+			"exitB": 6,
+			"exitC": 3,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 22,
+			"exitA": 4,
+			"exitB": 6,
+			"exitC": 2,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 23,
+			"exitA": 5,
+			"exitB": 5,
+			"exitC": 1,
+			"type": 2,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 24,
+			"exitA": 6,
+			"exitB": 4,
+			"exitC": 2,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		},
+		{
+			"id": 25,
+			"exitA": 7,
+			"exitB": 3,
+			"exitC": 3,
+			"type": 1,
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
+			"unparkTime": null
+		}
+	],
+	"transactions": [
+		{
+			"hours": 1,
+			"vehicle": "XYZ-123",
+			"transactionDate": "2022-05-02T08:07:42.059Z",
+			"price": ""
+		},
+		{
+			"hours": 1,
+			"vehicle": "",
+			"transactionDate": "2022-05-02T08:08:04.904Z",
+			"price": ""
+		}
+	]
+}

@@ -1,24 +1,37 @@
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+
+// packages
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { SnackbarProvider } from 'notistack'
+import { ReactQueryDevtools } from 'react-query/devtools'
+import { ThemeProvider } from '@mui/material/styles'
+
+// config
+import theme from 'config/theme'
+import RouteList from 'config/RouteList'
+
+const queryClient = new QueryClient()
+const nodeEnv = process.env.NODE_ENV
 
 const App = () => (
-	<div className='App'>
-		<header className='App-header'>
-			<img src={logo} className='App-logo' alt='logo' />
-			<p>
-				Edit <code>src/App.tsx</code> and save to reload.
-			</p>
-			<a
-				className='App-link'
-				href='https://reactjs.org'
-				target='_blank'
-				rel='noopener noreferrer'
+	<QueryClientProvider client={queryClient}>
+		<ThemeProvider theme={theme}>
+			<SnackbarProvider
+				maxSnack={5}
+				anchorOrigin={{
+					vertical: 'bottom',
+					horizontal: 'right',
+				}}
+				preventDuplicate
+				autoHideDuration={5000}
 			>
-				Learn React
-			</a>
-		</header>
-	</div>
+				<RouteList />
+				{nodeEnv === 'development' ? (
+					<ReactQueryDevtools initialIsOpen={false} />
+				) : null}
+			</SnackbarProvider>
+		</ThemeProvider>
+	</QueryClientProvider>
 )
 
 export default App
