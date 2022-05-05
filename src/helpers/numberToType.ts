@@ -1,4 +1,4 @@
-const numbertToType = (type: 1 | 2 | 3): string => {
+const numbertToType = (type: 0 | 1 | 2 | 3): string => {
 	switch (type) {
 		case 1:
 			return 'Small'
@@ -7,7 +7,7 @@ const numbertToType = (type: 1 | 2 | 3): string => {
 		case 3:
 			return 'Large'
 		default:
-			return 'Small'
+			return 'Unknown'
 	}
 }
 

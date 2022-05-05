@@ -5,7 +5,7 @@ import moment from 'moment'
 
 import numbertToType from 'helpers/numberToType'
 
-import { IProps } from './interface'
+import { IProps } from './types'
 
 import { ThumbnailWrapper, ActionWrapper, StyledImage } from './styles'
 
@@ -40,7 +40,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			</div>
 			<Typography variant='body'>
 				Slot:{' '}
-				{data.parked && !isLeft
+				{data.parkedType && !isLeft
 					? `Type ${numbertToType(data.parkedType)} vehicle is parked`
 					: 'Available'}
 			</Typography>
@@ -53,7 +53,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			<Typography variant='body'>Exit B: {data.exitB} units</Typography>
 			<Typography variant='body'>Exit C: {data.exitC} units</Typography>
 
-			{data.parked && !isLeft ? (
+			{data.parkedType && !isLeft ? (
 				<>
 					<Typography variant='body'>Hours: {timeDiff}</Typography>
 					<Typography variant='body'>
@@ -65,7 +65,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			)}
 
 			<ActionWrapper>
-				{data.parked && !isLeft ? (
+				{data.parkedType && !isLeft ? (
 					<Button variant='contained' onClick={() => handleLeave(data.id)}>
 						Leave
 					</Button>

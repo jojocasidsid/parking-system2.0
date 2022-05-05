@@ -16,6 +16,8 @@ const infoLight = '#E5F7FD'
 const rejected = '#FF5353'
 const rejectedLight = '#FEEDEE'
 
+const disabledInput = '#30364314'
+
 const baseText = '#303643'
 
 const exportColors = {
@@ -51,7 +53,7 @@ const exportColors = {
 	text: {
 		primary: baseText,
 		button: baseText,
-		secondary: baseText,
+		secondary: disabledInput,
 		link: baseText,
 		accent: baseText,
 		white,

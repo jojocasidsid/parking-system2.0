@@ -1,4 +1,4 @@
-export interface IData {
+export interface ISlotData {
 	price: number
 	hours: number
 	transactionDate: string

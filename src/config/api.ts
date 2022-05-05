@@ -1,4 +1,4 @@
-import axios, { AxiosResponse, AxiosError } from 'axios'
+import axios, { AxiosError } from 'axios'
 
 const baseURL = process.env.REACT_APP_BASE_URL
 
@@ -18,7 +18,10 @@ api.interceptors.request.use((config) => {
 })
 
 api.interceptors.response.use(
-	(response: AxiosResponse) => response.data.data,
+	(response) => ({
+		data: response.data,
+		totalCount: response.headers['x-total-count'],
+	}),
 	(error: AxiosError) => {
 		const errorDetails = {
 			status: error.response?.data.errors.status,

@@ -6,7 +6,7 @@ const SlotsAPI = {
 
 	parkSlot: (id: number, type: string, vehicle: string) => {
 		const requestData = {
-			parked: vehicle,
+			vehicle,
 			parkedType: type,
 			parkTime: moment(),
 			unparkTime: null,
@@ -16,10 +16,17 @@ const SlotsAPI = {
 
 	leaveSlot: (id: number) => {
 		const requestData = {
-			parked: 0,
-			parkedType: '',
+			vehicle: '',
+			parkedType: 0,
 			parkTime: null,
 			unparkTime: null,
+		}
+		return api.patch(`/slots/${id}`, requestData)
+	},
+
+	setLeaveSlot: (id: number, unparkTime: string) => {
+		const requestData = {
+			unparkTime,
 		}
 		return api.patch(`/slots/${id}`, requestData)
 	},
@@ -27,7 +34,7 @@ const SlotsAPI = {
 	getNearestParking: (vehicleType: number, exit: string) =>
 		api.get('/slots', {
 			params: {
-				parked: 0,
+				parkedType: 0,
 				type_gte: vehicleType,
 				_sort: exit,
 				_order: 'asc',
