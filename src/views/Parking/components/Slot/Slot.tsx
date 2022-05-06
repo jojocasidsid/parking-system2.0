@@ -4,7 +4,7 @@ import { Button, Typography } from '@mui/material'
 import moment from 'moment'
 import pluralize from 'pluralize'
 
-import numbertToType from 'helpers/numberToType'
+import numbertToType from 'helpers/numberToType/numberToType'
 
 import { IProps } from './types'
 

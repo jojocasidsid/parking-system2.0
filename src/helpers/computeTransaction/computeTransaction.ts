@@ -1,7 +1,7 @@
 const computeFee = (timeDifferenceinHours: number, fee: number) => {
 	const flatRate = 40
 	const flatHours = 3
-	if (timeDifferenceinHours >= 3) {
+	if (timeDifferenceinHours <= 3) {
 		return flatRate
 	}
 

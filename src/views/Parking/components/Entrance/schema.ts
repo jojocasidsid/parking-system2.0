@@ -1,4 +1,4 @@
-import validateDate from 'helpers/validateDate'
+import validateDate from 'helpers/validateDate/validateDate'
 import * as yup from 'yup'
 
 const ERROR_FIELD_REQUIRED = 'This field is required'

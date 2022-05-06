@@ -1,6 +1,6 @@
 import * as yup from 'yup'
 
-import validateLaterDate from 'helpers/validateLaterDate'
+import validateLaterDate from 'helpers/validateLaterDate/validateLaterDate'
 
 const ERROR_DATE_INVALID =
 	'Park time should be later than the current date and time'
