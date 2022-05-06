@@ -35,6 +35,16 @@ const Slot = ({ data, handleLeave }: IProps) => {
 
 				<StyledImage color={data.parkedType ? 'primary' : 'secondary'} />
 			</StyledSlot>
+
+			{data.parkedType ? (
+				<Typography variant='h4'>
+					{data.vehicle} <br />
+					<br />
+				</Typography>
+			) : (
+				<div />
+			)}
+
 			<Typography variant='h3'>
 				Slot:{' '}
 				{data.parkedType
@@ -47,14 +57,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				<br />
 			</Typography>
 			<br />
-			{data.parkedType ? (
-				<Typography variant='h4'>
-					Vehicle No: {data.vehicle} <br />
-					<br />
-				</Typography>
-			) : (
-				<div />
-			)}
+
 			<Typography variant='h3'>Distances: (West East, South) </Typography>
 			<Typography variant='h4'>
 				[ {pluralize('unit', data.west, true)} ,{' '}
