@@ -19,12 +19,13 @@ const ParkDialog = ({
 }: IProps) => {
 	const values: IValidationSchema = {
 		vehicle: '',
-		parkedType: '',
-		entrance: entranceTitle,
+		parkedType: 0,
 	}
 	const {
 		handleSubmit,
 		control,
+		reset,
+		watch,
 		formState: { errors },
 	} = useForm({
 		mode: 'all',
@@ -33,17 +34,26 @@ const ParkDialog = ({
 		resolver: yupResolver(validationSchema),
 	})
 
+	const onClose = () => {
+		if (!submitting) {
+			handleClose()
+			reset()
+		}
+	}
+
+	console.log(watch('parkedType'))
+	console.log(watch('vehicle'))
+	console.log(errors)
+
 	return (
 		<Modal
 			open={open}
-			title='Park Vehicle'
-			handleClose={() => {
-				if (!submitting) handleClose()
-			}}
+			title={`Park Vehicle (${entranceTitle})`}
+			handleClose={onClose}
 		>
 			<form onSubmit={handleSubmit(onSubmit)}>
-				<Grid container rowSpacing={4} columnSpacing={2.5}>
-					<Grid item xs={6}>
+				<Grid container rowSpacing={2} columnSpacing={2.5}>
+					<Grid item xs={12}>
 						<Input
 							control={control}
 							error={errors.vehicle?.message}
@@ -53,7 +63,7 @@ const ParkDialog = ({
 							label="Vehicle's Plate No."
 						/>
 					</Grid>
-					<Grid item xs={6}>
+					<Grid item xs={12}>
 						<Select
 							label='Vehicle Type'
 							name='parkedType'
@@ -62,35 +72,18 @@ const ParkDialog = ({
 							fullWidth
 							required
 							options={[
-								{ label: 'SP', value: '1' },
-								{ label: 'MP', value: '2' },
-								{ label: 'LP', value: '3' },
+								{ label: 'SP', value: 1 },
+								{ label: 'MP', value: 2 },
+								{ label: 'LP', value: 3 },
 							]}
 						/>
 					</Grid>
-
-					<Grid item xs={6}>
-						<Select
-							label='Vehicle Type'
-							name='entrance'
-							control={control}
-							error={errors.entrance?.message}
-							fullWidth
-							required
-							options={[
-								{ label: 'West', value: 'west' },
-								{ label: 'East', value: 'east' },
-								{ label: 'Sout', value: 'south' },
-							]}
-						/>
-					</Grid>
-
-					<FormSubmit
-						submitting={submitting}
-						actionText='park'
-						handleClose={handleClose}
-					/>
 				</Grid>
+				<FormSubmit
+					submitting={submitting}
+					actionText='Park'
+					handleClose={onClose}
+				/>
 			</form>
 		</Modal>
 	)

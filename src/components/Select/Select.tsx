@@ -8,7 +8,6 @@ import {
 	StyledRoot,
 	StyledLabel,
 	StyledSelect,
-	StyledArrowDown,
 	StyledFormHelper,
 } from './styles'
 
@@ -44,13 +43,7 @@ const Select = ({
 					value={value === -1 ? '' : value} // Workaround for out-of-range warnings, initial values for select inputs of number types are -1 as empty strings are not assignable
 					fullWidth={fullWidth}
 					// eslint-disable-next-line react/no-unstable-nested-components
-					IconComponent={(props) => (
-						<StyledArrowDown
-							src='/assets/arrow-down.svg'
-							alt='arrow-down'
-							{...props}
-						/>
-					)}
+
 					error={Boolean(error)}
 				>
 					{options.map((row, id) => (

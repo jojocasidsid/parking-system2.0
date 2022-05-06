@@ -1,19 +1,18 @@
 import styled from '@emotion/styled'
+import { InputLabel, TextField } from '@mui/material'
 import { Theme } from '@mui/material/styles'
-import { Select, FormHelperText } from '@mui/material'
 
-interface IStyled {
+interface ITheme {}
+interface IInput extends ITheme {
+	errors?: boolean
 	theme?: Theme
-}
-interface IStyledSelect extends IStyled {
-	error?: boolean
 }
 
 export const StyledRoot = styled('div')`
 	display: block;
 `
 
-export const StyledLabel = styled('label')`
+export const StyledLabel = styled(InputLabel)`
 	text-align: 'left';
 	letter-spacing: 0.12px;
 	padding-bottom: 8px;
@@ -24,15 +23,13 @@ export const StyledLabel = styled('label')`
 	font-weight: 600;
 	font-stretch: normal;
 	white-space: normal;
-
-	//has errors
-	color: ${({ theme, error }: IStyledSelect) => {
-		if (error) {
+	//has error
+	color: ${({ theme, errors }: IInput) => {
+		if (errors) {
 			return theme?.palette.error.main
 		}
 		return theme?.palette.text.primary
 	}};
-
 	& span {
 		color: ${({ theme }) => theme.palette.error.main};
 	}
@@ -40,32 +37,40 @@ export const StyledLabel = styled('label')`
 	display: block;
 `
 
-export const StyledSelect = styled(Select)`
-	min-width: 120px;
-
-	& .MuiSelect-select {
+export const StyledInput = styled(TextField)`
+	input {
 		padding: 8px 16px 8px 16px;
 		font-style: normal;
 		font-size: 14px;
 		font-weight: 500;
 		font-stretch: normal;
+		color: ${({ theme }) => theme.palette.text.primary};
 	}
 
 	fieldset {
 		border: 1px solid ${({ theme }) => theme.palette.text.secondary};
 		border-radius: 2px 0px 0px 2px;
+		border-color: ${({ theme, errors }: IInput) =>
+			errors
+				? theme?.palette.error.main
+				: theme?.palette.text.secondary} !important;
 	}
 
-	&.Mui-disabled {
+	input.Mui-disabled {
 		background-color: ${({ theme }) => theme.palette.text.secondary};
 		pointer-events: none;
 	}
-`
 
-export const StyledArrowDown = styled('img')`
-	width: 13px;
-`
+	input.MuiInputBase-inputAdornedStart {
+		padding-left: 0px;
+	}
 
-export const StyledFormHelper = styled(FormHelperText)`
-	color: ${({ theme }) => theme.palette.error.main};
+	input.MuiInputBase-inputAdornedEnd {
+		padding-right: 8px;
+	}
+
+	.MuiFormHelperText-root {
+		color: ${({ theme }) => theme.palette.error.main};
+		margin-left: 0;
+	}
 `

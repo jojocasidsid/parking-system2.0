@@ -1,6 +1,6 @@
 import React from 'react'
 import { useSnackbar } from 'notistack'
-import { useFetchSlot } from 'hooks/useFetchSlot'
+import { useFetchSlot } from 'queries/useFetchSlot'
 import { ISlotData } from 'views/Parking/components/Slot/types'
 import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'

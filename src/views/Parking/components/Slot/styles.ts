@@ -7,7 +7,8 @@ export const ThumbnailWrapper = styled('div')`
 	align-items: center;
 	padding: 20px;
 	flex-direction: column;
-	border: 1px solid ${({ theme }) => theme.palette.secondary.main};
+	border-radius: 30px;
+	border: 2px solid ${({ theme }) => theme.palette.secondary.main};
 `
 
 export const ActionWrapper = styled('div')`

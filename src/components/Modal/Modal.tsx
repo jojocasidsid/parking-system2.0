@@ -65,6 +65,7 @@ const Modal = ({
 		aria-labelledby='customized-dialog-title'
 		open={open}
 		{...dialogProps}
+		maxWidth='xl'
 	>
 		{title && (
 			<>
@@ -76,7 +77,7 @@ const Modal = ({
 		)}
 
 		<StyledDialogContent>{children}</StyledDialogContent>
-		<StyledDialogActions>{actions}</StyledDialogActions>
+		{actions && <StyledDialogActions>{actions}</StyledDialogActions>}
 	</Dialog>
 )
 

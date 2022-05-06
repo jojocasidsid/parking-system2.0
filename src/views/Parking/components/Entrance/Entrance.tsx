@@ -22,16 +22,16 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 
 	const onSubmit = async (data: IValidationSchema) => {
 		setSubmitting(true)
-		const { parkedType, entrance, vehicle } = data
+		const { parkedType, vehicle } = data
 		try {
-			const getParking = await SlotsAPI.getNearest(parkedType, entrance)
+			const getParking = await SlotsAPI.getNearest(parkedType, entranceTitle)
 
 			if (!getParking) {
 				throw new Error('There is no available slot')
 			}
 
 			const nearestParkingSlotId = getParking.data[0].id
-			await SlotsAPI.parkSlot(nearestParkingSlotId, parkedType, vehicle)
+			SlotsAPI.parkSlot(nearestParkingSlotId, parkedType, vehicle)
 
 			enqueueSnackbar('Vehicle has been successfully parked.', {
 				variant: 'success',
@@ -54,7 +54,7 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 				onSubmit={onSubmit}
 				submitting={submitting}
 			/>
-			<Button onClick={() => handleOpen()}>Park {entranceTitle} Center)</Button>
+			<Button onClick={() => handleOpen()}>Park ({entranceTitle})</Button>
 		</div>
 	)
 }

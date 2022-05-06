@@ -10,9 +10,10 @@ export const StyledRoot = styled('div')`
 
 export const ParkingWrapper = styled('div')`
 	display: flex;
-	justify-content: center;
+	justify-content: flex-start;
 	align-items: center;
 	padding: 20px;
+	flex-wrap: nowrap;
 `
 
 export const SlotsWrapper = styled('div')`
@@ -20,11 +21,5 @@ export const SlotsWrapper = styled('div')`
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	grid-gap: 10px;
-`
-
-export const ActionWrapper = styled('div')`
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-	padding: 20px;
+	width: 90vw;
 `

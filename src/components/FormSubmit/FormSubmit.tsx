@@ -8,9 +8,16 @@ interface IProps {
 }
 
 const FormSubmit = ({ submitting, handleClose, actionText }: IProps) => (
-	<Grid item container xs={12}>
-		<Grid item xs={8} />
-		<Grid item xs={4} container columnSpacing={1.5} justifyContent='flex-end'>
+	<Grid item container xs={12} paddingTop={5}>
+		<Grid item xs={6} />
+		<Grid
+			item
+			xs={6}
+			container
+			columnSpacing={1.5}
+			justifyContent='flex-end'
+			flexDirection='row'
+		>
 			<Grid item>
 				<Button
 					variant='outlined'

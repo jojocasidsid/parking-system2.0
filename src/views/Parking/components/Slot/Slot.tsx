@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import { Button, Typography } from '@mui/material'
 import moment from 'moment'
+import pluralize from 'pluralize'
 
 import numbertToType from 'helpers/numberToType'
 
@@ -27,7 +28,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			<div>
 				<StyledImage color='primary' />
 			</div>
-			<Typography variant='body'>
+			<Typography variant='h3'>
 				Slot:{' '}
 				{data.parkedType
 					? `Type ${numbertToType(data.parkedType)} vehicle is parked`
@@ -35,22 +36,25 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				<br />
 			</Typography>
 
-			<Typography variant='body'>
+			<Typography variant='h3'>
 				Parking Type: {numbertToType(data.type)} <br />
-			</Typography>
-
-			<Typography variant='h6'>Distances</Typography>
-			<Typography variant='body'>West: {data.west} units</Typography>
-			<Typography variant='body'>East: {data.east} units</Typography>
-			<Typography variant='body'>
-				Sout: {data.south} units <br />
 				<br />
 			</Typography>
 
+			<Typography variant='h3'>Distances</Typography>
+			<Typography variant='h4'>
+				West: {pluralize('unit', data.west, true)} || East:{' '}
+				{pluralize('unit', data.east, true)} || South:{' '}
+				{pluralize('unit', data.south, true)}
+			</Typography>
+
+			<br />
+			<br />
+
 			{data.parkedType ? (
 				<>
-					<Typography variant='body'>Hours: {timeDiff}</Typography>
-					<Typography variant='body'>
+					<Typography variant='h3'>Hours: {timeDiff}</Typography>
+					<Typography variant='h3'>
 						Date Time: {moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 					</Typography>
 				</>
