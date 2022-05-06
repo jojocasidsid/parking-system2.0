@@ -1,13 +1,14 @@
 import api from 'config/api'
+import moment from 'moment'
 import { ISlotData } from './interface'
 
 const EarningsApi = {
 	list: () => api.get('/earnings'),
 	add: (data: ISlotData) => api.post(`/earnings`, data),
-	getEarningsWithin1Hour: (vehicle: string, time: string) =>
+	getVehicleTransactionsWithin1Hour: (vehicle: string) =>
 		api.get('/earnings', {
 			params: {
-				transactionDate_gte: time,
+				transactionDate_gte: moment().subtract(1, 'hours'),
 				vehicle,
 			},
 		}),

@@ -60,14 +60,23 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				<>
 					<Typography variant='h3'>{pluralize('Hour', timeDiff, true)}</Typography>
 					<Typography variant='body'>
-						Date Time: {moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
+						Park Time: {moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 					</Typography>
 				</>
 			) : (
 				<div />
 			)}
+
+			{data.unparkTime ? (
+				<Typography variant='body'>
+					Unpark Time: {moment(data.unparkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
+				</Typography>
+			) : (
+				<div />
+			)}
+
 			<ActionWrapper>
-				{data.parkedType ? (
+				{data.parkedType && !data.unparkTime ? (
 					<Button variant='contained' onClick={() => handleLeave(data.id)}>
 						Leave
 					</Button>
