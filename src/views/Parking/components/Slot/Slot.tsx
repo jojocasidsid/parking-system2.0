@@ -31,7 +31,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			<Typography variant='h3'>
 				Slot:{' '}
 				{data.parkedType
-					? `Type ${numbertToType(data.parkedType)} vehicle is parked`
+					? `${numbertToType(data.parkedType)} vehicle is parked`
 					: 'Available'}
 				<br />
 			</Typography>
