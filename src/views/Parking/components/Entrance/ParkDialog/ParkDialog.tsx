@@ -64,6 +64,15 @@ const ParkDialog = ({
 					</Grid>
 
 					<Grid item xs={6}>
+						<Checkbox
+							control={control}
+							name='parkNow'
+							label='Park Now'
+							defaultValue
+						/>
+					</Grid>
+
+					<Grid item xs={6}>
 						<Input
 							control={control}
 							type='datetime-local'
@@ -72,15 +81,6 @@ const ParkDialog = ({
 							name='parkTime'
 							label='Parking Time'
 							disabled={watch('parkNow')}
-						/>
-					</Grid>
-
-					<Grid item xs={6}>
-						<Checkbox
-							control={control}
-							name='parkNow'
-							label='Park Now'
-							defaultValue
 						/>
 					</Grid>
 				</Grid>

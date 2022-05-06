@@ -6,10 +6,9 @@ const validateDate = (value: string | undefined) => {
 		const dateNow = moment()
 		const timeBetween = moment.duration(dateNow.diff(dateParked))
 
-		if (Number(timeBetween) >= 0) {
-			return true
+		if (Number(timeBetween) <= 0) {
+			return false
 		}
-		return false
 	}
 	return true
 }

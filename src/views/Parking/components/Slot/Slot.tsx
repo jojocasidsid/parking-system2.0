@@ -35,7 +35,6 @@ const Slot = ({ data, handleLeave }: IProps) => {
 					: 'Available'}
 				<br />
 			</Typography>
-
 			<Typography variant='h3'>
 				Parking Type: {numbertToType(data.type)} <br />
 				<br />
@@ -49,17 +48,14 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			) : (
 				<div />
 			)}
-
-			<Typography variant='h3'>Distances</Typography>
+			<Typography variant='h3'>Distances: (West East, South) </Typography>
 			<Typography variant='h4'>
-				West: {pluralize('unit', data.west, true)} || East:{' '}
-				{pluralize('unit', data.east, true)} || South:{' '}
-				{pluralize('unit', data.south, true)}
+				[ {pluralize('unit', data.west, true)} ,{' '}
+				{pluralize('unit', data.east, true)} , {pluralize('unit', data.south, true)}{' '}
+				]
 			</Typography>
-
 			<br />
 			<br />
-
 			{data.parkedType ? (
 				<>
 					<Typography variant='h3'>{pluralize('Hour', timeDiff, true)}</Typography>
@@ -70,7 +66,6 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			) : (
 				<div />
 			)}
-
 			<ActionWrapper>
 				{data.parkedType ? (
 					<Button variant='contained' onClick={() => handleLeave(data.id)}>
