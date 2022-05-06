@@ -20,10 +20,10 @@ describe('FormSubmit Component', () => {
 		expect(tree).toMatchSnapshot()
 	})
 
-	it('should render component without crashing on loading', () => {
+	it('should render component without crashing', () => {
 		const tree = renderer.create(
 			<ThemeProvider theme={theme}>
-				<FormSubmit submitting={false} handleClose={() => {}} actionText='Park' />
+				<FormSubmit submitting={false} handleClose={() => {}} actionText='Unpark' />
 			</ThemeProvider>
 		)
 
