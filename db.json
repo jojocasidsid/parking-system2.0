@@ -7,6 +7,7 @@
 			"south": 7,
 			"type": 1,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -17,6 +18,7 @@
 			"south": 6,
 			"type": 3,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -27,6 +29,7 @@
 			"south": 5,
 			"type": 1,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -37,6 +40,7 @@
 			"south": 6,
 			"type": 3,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -47,6 +51,7 @@
 			"south": 7,
 			"type": 2,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -57,6 +62,7 @@
 			"south": 6,
 			"type": 2,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -99,9 +105,9 @@
 			"east": 2,
 			"south": 6,
 			"type": 3,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "LMF7008",
+			"parkedType": 3,
+			"parkTime": "2022-05-06T23:33:57.519Z",
 			"unparkTime": null
 		},
 		{
@@ -132,9 +138,9 @@
 			"east": 3,
 			"south": 3,
 			"type": 3,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "9D92772",
+			"parkedType": 3,
+			"parkTime": "2022-05-06T23:33:11.679Z",
 			"unparkTime": null
 		},
 		{
@@ -154,9 +160,9 @@
 			"east": 1,
 			"south": 5,
 			"type": 2,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "dassd",
+			"parkedType": 1,
+			"parkTime": "2022-05-06T23:36:32.713Z",
 			"unparkTime": null
 		},
 		{
@@ -176,9 +182,9 @@
 			"east": 5,
 			"south": 3,
 			"type": 3,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "5LDC733",
+			"parkedType": 3,
+			"parkTime": "2022-05-06T23:33:24.801Z",
 			"unparkTime": null
 		},
 		{
@@ -198,9 +204,9 @@
 			"east": 3,
 			"south": 3,
 			"type": 3,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "UTV9494",
+			"parkedType": 3,
+			"parkTime": "2022-05-06T23:33:44.802Z",
 			"unparkTime": null
 		},
 		{
@@ -210,6 +216,7 @@
 			"south": 4,
 			"type": 2,
 			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": null,
 			"unparkTime": null
 		},
@@ -269,33 +276,5 @@
 			"unparkTime": null
 		}
 	],
-	"earnings": [
-		{
-			"price": 40,
-			"hours": 0.0020077777777777776,
-			"parkTime": "2022-05-06T22:11:39.772Z",
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T06:11:47+08:00",
-			"vehicle": "123-123",
-			"id": 1
-		},
-		{
-			"price": 0,
-			"hours": 0.0016347222222222223,
-			"parkTime": "2022-05-06T22:12:02.115Z",
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T06:12:08+08:00",
-			"vehicle": "123-123",
-			"id": 2
-		},
-		{
-			"price": 5060,
-			"hours": 23.991049444444446,
-			"parkTime": "2022-05-06T22:12:32.222Z",
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T06:13:02+08:00",
-			"vehicle": "123-123",
-			"id": 3
-		}
-	]
+	"earnings": []
 }

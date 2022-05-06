@@ -14,7 +14,12 @@ const SlotsAPI = {
 				_limit: '1',
 			},
 		}),
-
+	searchVehicle: (vehicle: string) =>
+		api.get('/slots', {
+			params: {
+				vehicle,
+			},
+		}),
 	getSlot: (id: number) => api.get(`/slots/${id}`),
 	parkSlot: (
 		id: number,

@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import { Button, Typography } from '@mui/material'
 
 import { useSnackbar } from 'notistack'
-import SlotsAPI from 'apis/Slots/SlotsApi'
+import { SlotsApi } from 'apis'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
+import _ from 'lodash'
 import { IProps } from './types'
 import ParkDialog from './ParkDialog'
 import { defaultValues, validationSchema, IValidationSchema } from './schema'
@@ -40,17 +41,27 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 		setSubmitting(true)
 		const { parkedType, vehicle, parkNow, parkTime } = data
 		try {
-			// get neareast slot
-			const getParking = await SlotsAPI.getNearest(parkedType, entranceTitle)
+			const searchVehicle = await SlotsApi.searchVehicle(vehicle)
+			const isVehicle = _.get(searchVehicle, 'data', []).length
 
+			if (isVehicle) {
+				throw new Error(`Vehicle (${vehicle}) is already parked`)
+			}
+
+			// get neareast slot
+			console.log({ parkedType })
+			console.log({ entranceTitle })
+			const getParking = await SlotsApi.getNearest(parkedType, entranceTitle)
+			console.log({ getParking })
 			// throw error if no slot available
-			if (!getParking) {
+			if (getParking.data.length) {
 				throw new Error('There is no available slot')
 			}
 
 			// park on that nearest slot
 			const nearestParkingSlotId = getParking.data[0].id
-			await SlotsAPI.parkSlot(
+			console.log({ nearestParkingSlotId })
+			await SlotsApi.parkSlot(
 				nearestParkingSlotId,
 				parkedType,
 				vehicle,
@@ -63,8 +74,17 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 			})
 
 			slotRefetch()
-		} catch (e) {
-			enqueueSnackbar(`Encountered an error`, { variant: 'error' })
+		} catch (error) {
+			const errorMessage = _.get(error, 'message', '')
+			if (errorMessage) {
+				enqueueSnackbar(errorMessage, {
+					variant: 'error',
+				})
+			} else {
+				enqueueSnackbar('Something went wrong', {
+					variant: 'error',
+				})
+			}
 		}
 		setSubmitting(false)
 		handleClose()
