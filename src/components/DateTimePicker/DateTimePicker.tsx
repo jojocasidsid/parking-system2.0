@@ -1,9 +1,10 @@
 import React from 'react'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
-
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
 import { DateTimePicker as MUIDateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
 import { Control, Controller } from 'react-hook-form'
+
+// styles
 import { StyledInput, StyledLabel, StyledRoot } from './styles'
 
 interface IProps {
