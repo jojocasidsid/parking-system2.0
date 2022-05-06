@@ -275,32 +275,9 @@
 			"hours": 1,
 			"vehicle": "XYZ-123",
 			"parkingType": 1,
+			"parkTime": "",
 			"transactionDate": "2022-05-02T08:07:42.059Z",
 			"price": "20"
-		},
-		{
-			"price": 100,
-			"hours": 1,
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T01:37:33+08:00",
-			"vehicle": "8FMS348",
-			"id": 2
-		},
-		{
-			"price": 140,
-			"hours": 4,
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T04:38:21+08:00",
-			"vehicle": "CJT5454",
-			"id": 3
-		},
-		{
-			"price": 100,
-			"hours": 1,
-			"parkingType": 3,
-			"transactionDate": "2022-05-07T04:38:53+08:00",
-			"vehicle": "CJT5454",
-			"id": 4
 		}
 	]
 }

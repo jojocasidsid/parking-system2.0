@@ -64,7 +64,7 @@ const Parking = () => {
 		}
 	}
 
-	const onConfirmLeave = async (leaveNow: boolean, leaveDate: string) => {
+	const onConfirmLeave = async (leaveNow: boolean, leaveTime: string) => {
 		setAwaitingDeleteResponse(true)
 
 		try {
@@ -83,7 +83,7 @@ const Parking = () => {
 
 			const isThereTransaction = Boolean(transactions.length)
 
-			const currentTimeDiff = getTimeDifference(parkTime)
+			const currentTimeDiff = getTimeDifference(parkTime, leaveTime)
 			const currentTmeDiffRoundUp = Math.ceil(currentTimeDiff)
 
 			const currentFee = computeTransaction(currentTmeDiffRoundUp, type)
@@ -93,12 +93,14 @@ const Parking = () => {
 				const totalFees = continousRateCalculation(
 					transactions,
 					currentTimeDiff,
-					type
+					type,
+					leaveTime
 				)
 				// store the exact hour not the rounded one
 				await EarningsApi.add({
 					price: totalFees,
 					hours: currentTimeDiff,
+					parkTime,
 					parkingType: type,
 					transactionDate: moment().format(),
 					vehicle,
@@ -108,6 +110,7 @@ const Parking = () => {
 				await EarningsApi.add({
 					price: currentFee,
 					hours: currentTimeDiff,
+					parkTime,
 					parkingType: type,
 					transactionDate: moment().format(),
 					vehicle,
@@ -115,7 +118,7 @@ const Parking = () => {
 			}
 
 			if (leaveNow) await SlotsApi.leaveSlot(leaveTargetId)
-			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveDate)
+			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveTime)
 
 			slotRefetch()
 			earningsRefetch()

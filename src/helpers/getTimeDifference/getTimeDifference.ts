@@ -1,8 +1,11 @@
 import moment from 'moment'
 
-const getTimeDifference = (parkTime: string) => {
+const getTimeDifference = (
+	parkTime: string,
+	leaveTime: string | undefined = ''
+) => {
 	const dateParked = moment(parkTime)
-	const dateNow = moment()
+	const dateNow = leaveTime ? moment(leaveTime) : moment()
 
 	const timeBetween = moment.duration(dateNow.diff(dateParked))
 

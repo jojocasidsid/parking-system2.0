@@ -4,4 +4,5 @@ export interface ISlotData {
 	transactionDate: string
 	vehicle: string
 	parkingType: number
+	parkTime: string
 }
