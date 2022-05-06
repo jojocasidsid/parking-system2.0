@@ -36,8 +36,8 @@ const typography = {
 	h4: {
 		color: palette.text.primary,
 		fontWeight: 400,
-		fontSize: '20px',
-		lineHeight: '24px',
+		fontSize: '16px',
+		lineHeight: '20px',
 	},
 	h5: {
 		color: palette.text.primary,

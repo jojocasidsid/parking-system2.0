@@ -17,7 +17,7 @@ export const StyledSlot = styled('div')`
 `
 
 export const StyledImage = styled(DirectionsCarIcon)`
-	font-size: 60px;
+	font-size: 45px;
 `
 
 export const ActionWrapper = styled('div')`
