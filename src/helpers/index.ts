@@ -1,4 +1,5 @@
 export { default as computeTransaction } from './computeTransaction/computeTransaction'
+export { default as continousRateCalculation } from './continousRateCalculation/continousRateCalculation'
 export { default as getSumBykey } from './getSumByKey/getSumByKey'
 export { default as numberToType } from './numberToType/numberToType'
 export { default as url } from './url/url'

@@ -13,12 +13,16 @@ import { SlotsApi, EarningsApi } from 'apis'
 import { useFetchSlot, useFetchEarnings } from 'queries'
 
 // helpers
-import { computeTransaction, getSumBykey, getTimeDifference } from 'helpers'
+import {
+	computeTransaction,
+	getSumBykey,
+	getTimeDifference,
+	continousRateCalculation,
+} from 'helpers'
 
 // components
 import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'
-import continousRateCalculation from 'helpers/continousRateCalculation/continousRateCalculation'
 import Entrance from './components/Entrance'
 import UnparkDialog from './components/UnparkDialog'
 import Slot from './components/Slot'
