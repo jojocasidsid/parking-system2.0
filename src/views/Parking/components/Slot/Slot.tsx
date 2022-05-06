@@ -76,7 +76,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			)}
 
 			{data.unparkTime ? (
-				<Typography variant='h3'>
+				<Typography variant='h4'>
 					Unpark Time: {moment(data.unparkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 				</Typography>
 			) : (

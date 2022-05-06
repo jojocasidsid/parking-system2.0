@@ -111,9 +111,9 @@
 			"south": 5,
 			"type": 3,
 			"vehicle": "123-123",
-			"parkedType": 1,
-			"parkTime": "2022-05-06T20:55:59.050Z",
-			"unparkTime": null
+			"parkedType": 3,
+			"parkTime": "2022-05-06T22:12:32.222Z",
+			"unparkTime": "2022-05-08T06:12"
 		},
 		{
 			"id": 12,
@@ -271,13 +271,31 @@
 	],
 	"earnings": [
 		{
-			"id": 1,
-			"hours": 1,
-			"vehicle": "XYZ-123",
-			"parkingType": 1,
-			"parkTime": "",
-			"transactionDate": "2022-05-02T08:07:42.059Z",
-			"price": "20"
+			"price": 40,
+			"hours": 0.0020077777777777776,
+			"parkTime": "2022-05-06T22:11:39.772Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-07T06:11:47+08:00",
+			"vehicle": "123-123",
+			"id": 1
+		},
+		{
+			"price": 0,
+			"hours": 0.0016347222222222223,
+			"parkTime": "2022-05-06T22:12:02.115Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-07T06:12:08+08:00",
+			"vehicle": "123-123",
+			"id": 2
+		},
+		{
+			"price": 5060,
+			"hours": 23.991049444444446,
+			"parkTime": "2022-05-06T22:12:32.222Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-07T06:13:02+08:00",
+			"vehicle": "123-123",
+			"id": 3
 		}
 	]
 }
