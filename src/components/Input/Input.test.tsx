@@ -48,7 +48,6 @@ describe('Input component', () => {
 						name='test'
 						placeholder='test'
 						type='text'
-						acceptsOnly='alpha'
 					/>
 				</ThemeProvider>
 			)
@@ -85,7 +84,6 @@ describe('Input component', () => {
 						name='test'
 						placeholder='test'
 						type='text'
-						acceptsOnly='alpha'
 					/>
 				</ThemeProvider>
 			)

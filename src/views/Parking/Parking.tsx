@@ -7,6 +7,7 @@ import Page from 'components/Page'
 import Slot from './components/Slot'
 
 import { SlotsWrapper, ParkingWrapper, StyledRoot } from './styles'
+import Entrance from './components/Entrance'
 
 const Parking = () => {
 	const { enqueueSnackbar } = useSnackbar()
@@ -35,6 +36,7 @@ const Parking = () => {
 		<Page title='Parking System'>
 			<StyledRoot>
 				<ParkingWrapper>
+					<Entrance entranceTitle='West' slotRefetch={slotRefetch} />
 					<SlotsWrapper>
 						{slotData &&
 							slotData.data.map((row: ISlotData, key: number) => (

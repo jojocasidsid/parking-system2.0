@@ -19,7 +19,6 @@ export interface IProps {
 	rows?: number
 	small?: boolean
 	maxLength?: number
-	acceptsOnly?: 'alpha' | 'alphanumeric' | 'numeric'
 	hideErrorMessage?: boolean
 	inputRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
 }

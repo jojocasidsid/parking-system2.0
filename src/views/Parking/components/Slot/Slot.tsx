@@ -32,15 +32,20 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				{data.parkedType
 					? `Type ${numbertToType(data.parkedType)} vehicle is parked`
 					: 'Available'}
+				<br />
 			</Typography>
 
 			<Typography variant='body'>
-				Parking Type: {numbertToType(data.type)}{' '}
+				Parking Type: {numbertToType(data.type)} <br />
 			</Typography>
 
-			<Typography variant='body'>Exit A: {data.exitA} units</Typography>
-			<Typography variant='body'>Exit B: {data.exitB} units</Typography>
-			<Typography variant='body'>Exit C: {data.exitC} units</Typography>
+			<Typography variant='h6'>Distances</Typography>
+			<Typography variant='body'>West: {data.west} units</Typography>
+			<Typography variant='body'>East: {data.east} units</Typography>
+			<Typography variant='body'>
+				Sout: {data.south} units <br />
+				<br />
+			</Typography>
 
 			{data.parkedType ? (
 				<>

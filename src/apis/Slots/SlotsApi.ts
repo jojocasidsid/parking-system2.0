@@ -4,10 +4,10 @@ import moment from 'moment'
 const SlotsAPI = {
 	list: () => api.get('/slots'),
 
-	parkSlot: (id: number, type: string, vehicle: string) => {
+	parkSlot: (id: number, parkedType: string, vehicle: string) => {
 		const requestData = {
 			vehicle,
-			parkedType: type,
+			parkedType,
 			parkTime: moment(),
 			unparkTime: null,
 		}
@@ -31,12 +31,12 @@ const SlotsAPI = {
 		return api.patch(`/slots/${id}`, requestData)
 	},
 
-	getNearestParking: (vehicleType: number, exit: string) =>
+	getNearest: (vehicleType: string, entrance: string) =>
 		api.get('/slots', {
 			params: {
 				parkedType: 0,
 				type_gte: vehicleType,
-				_sort: exit,
+				_sort: entrance.toLowerCase(),
 				_order: 'asc',
 				_limit: '1',
 			},
