@@ -1,4 +1,10 @@
 const computeFee = (timeDifferenceinHours: number, fee: number) => {
+	const flatRate = 40
+	const flatHours = 3
+	if (timeDifferenceinHours >= 3) {
+		return flatRate
+	}
+
 	if (timeDifferenceinHours / 24 >= 1) {
 		const diff = Math.floor(timeDifferenceinHours / 24)
 		const chunk = diff * 5000
@@ -8,7 +14,7 @@ const computeFee = (timeDifferenceinHours: number, fee: number) => {
 		return total
 	}
 
-	return timeDifferenceinHours * fee
+	return (timeDifferenceinHours - flatHours) * fee + flatRate
 }
 
 const computeTransaction = (
