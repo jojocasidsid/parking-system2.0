@@ -110,9 +110,9 @@
 			"east": 5,
 			"south": 5,
 			"type": 3,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "123-123",
+			"parkedType": 1,
+			"parkTime": "2022-05-06T20:55:59.050Z",
 			"unparkTime": null
 		},
 		{

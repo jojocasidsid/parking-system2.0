@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Theme } from '@mui/material/styles'
-import { Select, FormHelperText } from '@mui/material'
+import { Select, FormHelperText, InputLabel } from '@mui/material'
 
 interface IStyled {
 	theme?: Theme
@@ -13,7 +13,7 @@ export const StyledRoot = styled('div')`
 	display: block;
 `
 
-export const StyledLabel = styled('label')`
+export const StyledLabel = styled(InputLabel)`
 	text-align: 'left';
 	letter-spacing: 0.12px;
 	padding-bottom: 8px;
