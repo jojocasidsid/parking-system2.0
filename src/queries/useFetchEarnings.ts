@@ -6,7 +6,7 @@ const useFetchEarnings = () =>
 	useQuery(['earnings'], () => EarningsApi.list(), {
 		refetchOnWindowFocus: true,
 		refetchOnMount: true,
-		refetchInterval: 20000,
+		refetchInterval: 10000,
 		refetchIntervalInBackground: false,
 	})
 

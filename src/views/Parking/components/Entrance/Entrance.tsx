@@ -27,6 +27,7 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 		control,
 		reset,
 		watch,
+		setValue,
 		formState: { errors },
 	} = useForm({
 		mode: 'all',
@@ -83,6 +84,7 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 				errors={errors}
 				watch={watch}
 				reset={reset}
+				setValue={setValue}
 			/>
 			<Button onClick={() => handleOpen()}>
 				<Typography variant='h3'>Park ({entranceTitle})</Typography>

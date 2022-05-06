@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useSnackbar } from 'notistack'
 import useFetchSlot from 'queries/useFetchSlot'
 import { ISlotData } from 'views/Parking/components/Slot/types'
@@ -6,11 +6,16 @@ import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'
 import useFetchEarnings from 'queries/useFetchEarnings'
 import { Typography } from '@mui/material'
-import { getSumBykey } from 'helpers'
+import { computeTransaction, getSumBykey, getTimeDifference } from 'helpers'
+import SlotsAPI from 'apis/Slots/SlotsApi'
+import _ from 'lodash'
+import EarningsApi from 'apis/Earnings/EarningsApi'
+import moment from 'moment'
 import Slot from './components/Slot'
 
 import { SlotsWrapper, ParkingWrapper, StyledRoot } from './styles'
 import Entrance from './components/Entrance'
+import UnparkDialog from './components/UnparkDialog'
 
 const Parking = () => {
 	const { enqueueSnackbar } = useSnackbar()
@@ -27,15 +32,91 @@ const Parking = () => {
 		refetch: earningsRefetch,
 	} = useFetchEarnings()
 
-	const handleLeave = (id: number) => {
-		console.log(id)
+	const [openLeave, setOpenLeave] = useState(false)
+	const [awaitingDeleteResponse, setAwaitingDeleteResponse] = useState(false)
+	const [leaveTargetId, setLeaveTargetId] = useState(0)
 
-		slotRefetch()
-		earningsRefetch()
+	const openModalLeave = (id: number) => {
+		setOpenLeave(true)
+		setLeaveTargetId(id)
+	}
 
-		enqueueSnackbar('Something went wrong', {
-			variant: 'error',
-		})
+	const closeModalLeave = () => {
+		if (!awaitingDeleteResponse) {
+			setOpenLeave(false)
+			setLeaveTargetId(0)
+		}
+	}
+
+	const onConfirmLeave = async (leaveNow: boolean, leaveDate: string) => {
+		setAwaitingDeleteResponse(true)
+
+		try {
+			if (!leaveTargetId) throw new Error('This is not a valid slot')
+
+			const slot = await SlotsAPI.getSlot(leaveTargetId)
+			const { parkedType, parkTime, vehicle, type } = _.get(slot, 'data')
+
+			if (!parkedType || !vehicle)
+				throw new Error('There is no car parked in here')
+
+			const getVehicleTransactionsWithin1Hour =
+				await EarningsApi.getVehicleTransactionsWithin1Hour(vehicle)
+
+			const transactions = _.get(getVehicleTransactionsWithin1Hour, 'data', [])
+
+			const isThereTransaction = Boolean(transactions.length)
+
+			const currentTimeDiff = getTimeDifference(parkTime)
+			const currentFee = computeTransaction(currentTimeDiff, type)
+
+			if (isThereTransaction) {
+				// apply continous rate
+				const pastHours = getSumBykey(transactions, 'hours')
+				const totalHours = pastHours + currentTimeDiff
+
+				const pastTotalFees = computeTransaction(pastHours, type)
+				const totalFeesForAllTransactions = computeTransaction(totalHours, type)
+
+				const totalFees = totalFeesForAllTransactions - pastTotalFees
+
+				await EarningsApi.add({
+					price: totalFees,
+					hours: currentTimeDiff,
+					parkingType: type,
+					transactionDate: moment().format(),
+					vehicle,
+				})
+			} else {
+				// not eligible for continous rate
+				await EarningsApi.add({
+					price: currentFee,
+					hours: currentTimeDiff,
+					parkingType: type,
+					transactionDate: moment().format(),
+					vehicle,
+				})
+			}
+
+			if (leaveNow) await SlotsAPI.leaveSlot(leaveTargetId)
+			else await SlotsAPI.setLeaveSlot(leaveTargetId, leaveDate)
+
+			slotRefetch()
+			earningsRefetch()
+		} catch (error) {
+			const errorMessage = _.get(error, 'message', '')
+			if (errorMessage) {
+				enqueueSnackbar(errorMessage, {
+					variant: 'error',
+				})
+			} else {
+				enqueueSnackbar('Something went wrong', {
+					variant: 'error',
+				})
+			}
+		}
+
+		setAwaitingDeleteResponse(false)
 	}
 
 	if (isLoadingSlot || isLoadingEarnings) {
@@ -44,6 +125,13 @@ const Parking = () => {
 
 	return (
 		<Page title='Parking System'>
+			<UnparkDialog
+				open={openLeave}
+				slot={leaveTargetId}
+				submitting={awaitingDeleteResponse}
+				handleClose={closeModalLeave}
+				onConfirmLeave={onConfirmLeave}
+			/>
 			<StyledRoot>
 				<Typography variant='h1'>
 					Earnings: {earningsData && getSumBykey(earningsData.data, 'price')}{' '}
@@ -53,7 +141,7 @@ const Parking = () => {
 					<SlotsWrapper>
 						{slotData &&
 							slotData.data.map((row: ISlotData, key: number) => (
-								<Slot key={key} data={row} handleLeave={(id) => handleLeave(id)} />
+								<Slot key={key} data={row} handleLeave={(id) => openModalLeave(id)} />
 							))}
 					</SlotsWrapper>
 					<Entrance entranceTitle='East' slotRefetch={slotRefetch} />

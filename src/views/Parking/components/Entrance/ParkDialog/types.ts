@@ -3,6 +3,7 @@ import {
 	FieldError,
 	UseFormHandleSubmit,
 	UseFormReset,
+	UseFormSetValue,
 	UseFormWatch,
 } from 'react-hook-form'
 import { IValidationSchema } from '../schema'
@@ -17,9 +18,10 @@ export interface IProps {
 		[key in keyof IValidationSchema]?: FieldError
 	}
 
-	handleSubmit: UseFormHandleSubmit<IValidationSchema>
 	onSubmit: (data: IValidationSchema) => void
+	handleSubmit: UseFormHandleSubmit<IValidationSchema>
 	handleClose: () => void
 	reset: UseFormReset<IValidationSchema>
+	setValue: UseFormSetValue<IValidationSchema>
 	watch: UseFormWatch<IValidationSchema>
 }

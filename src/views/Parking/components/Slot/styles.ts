@@ -10,13 +10,18 @@ export const ThumbnailWrapper = styled('div')`
 	border-radius: 30px;
 	border: 2px solid ${({ theme }) => theme.palette.secondary.main};
 `
+export const StyledSlot = styled('div')`
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+`
+
+export const StyledImage = styled(DirectionsCarIcon)`
+	font-size: 100px;
+`
 
 export const ActionWrapper = styled('div')`
 	& > button {
 		margin: 20px;
 	}
-`
-
-export const StyledImage = styled(DirectionsCarIcon)`
-	font-size: 100px;
 `

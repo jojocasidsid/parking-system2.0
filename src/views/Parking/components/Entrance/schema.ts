@@ -3,7 +3,7 @@ import * as yup from 'yup'
 
 const ERROR_FIELD_REQUIRED = 'This field is required'
 const ERROR_DATE_INVALID =
-	'Park time should be less than the current date and time'
+	'Park time should be earlier than the current date and time'
 
 export const validationSchema = yup.object({
 	vehicle: yup.string().required(ERROR_FIELD_REQUIRED),

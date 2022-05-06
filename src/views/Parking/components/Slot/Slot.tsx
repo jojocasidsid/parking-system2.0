@@ -8,7 +8,12 @@ import numbertToType from 'helpers/numberToType'
 
 import { IProps } from './types'
 
-import { ThumbnailWrapper, ActionWrapper, StyledImage } from './styles'
+import {
+	ThumbnailWrapper,
+	ActionWrapper,
+	StyledImage,
+	StyledSlot,
+} from './styles'
 
 const Slot = ({ data, handleLeave }: IProps) => {
 	const [timeDiff, setTimeDiff] = useState(0)
@@ -25,9 +30,11 @@ const Slot = ({ data, handleLeave }: IProps) => {
 
 	return (
 		<ThumbnailWrapper>
-			<div>
+			<StyledSlot>
+				<Typography variant='h1'>{data.id}</Typography>
+
 				<StyledImage color={data.parkedType ? 'primary' : 'secondary'} />
-			</div>
+			</StyledSlot>
 			<Typography variant='h3'>
 				Slot:{' '}
 				{data.parkedType

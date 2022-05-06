@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 
 import { Grid } from '@mui/material'
 import FormSubmit from 'components/FormSubmit'
@@ -18,8 +18,9 @@ const ParkDialog = ({
 	onSubmit,
 	handleClose,
 	handleSubmit,
-	watch,
 	reset,
+	setValue,
+	watch,
 }: IProps) => {
 	const onClose = () => {
 		if (!submitting) {
@@ -27,6 +28,12 @@ const ParkDialog = ({
 			reset()
 		}
 	}
+	const parkNow = watch('parkNow')
+	useEffect(() => {
+		if (parkNow) {
+			setValue('parkTime', '')
+		}
+	}, [parkNow])
 
 	return (
 		<Modal
@@ -80,7 +87,7 @@ const ParkDialog = ({
 							fullWidth
 							name='parkTime'
 							label='Parking Time'
-							disabled={watch('parkNow')}
+							disabled={parkNow}
 						/>
 					</Grid>
 				</Grid>

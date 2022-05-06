@@ -13,9 +13,9 @@ const computeFee = (timeDifferenceinHours: number, fee: number) => {
 
 const computeTransaction = (
 	timeDifferenceinHours: number,
-	vehicleType: number
+	parkType: number
 ) => {
-	switch (vehicleType) {
+	switch (parkType) {
 		case 1:
 			return computeFee(timeDifferenceinHours, 20)
 		case 2:
@@ -23,7 +23,7 @@ const computeTransaction = (
 		case 3:
 			return computeFee(timeDifferenceinHours, 100)
 		default:
-			return ''
+			return computeFee(timeDifferenceinHours, 100)
 	}
 }
 

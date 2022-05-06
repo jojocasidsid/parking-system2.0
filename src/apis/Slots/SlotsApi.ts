@@ -15,6 +15,7 @@ const SlotsAPI = {
 			},
 		}),
 
+	getSlot: (id: number) => api.get(`/slots/${id}`),
 	parkSlot: (
 		id: number,
 		parkedType: number,
