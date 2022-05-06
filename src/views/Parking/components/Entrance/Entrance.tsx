@@ -1,11 +1,13 @@
 import React, { useState } from 'react'
-import { Button } from '@mui/material'
+import { Button, Typography } from '@mui/material'
 
 import { useSnackbar } from 'notistack'
 import SlotsAPI from 'apis/Slots/SlotsApi'
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useForm } from 'react-hook-form'
 import { IProps } from './types'
 import ParkDialog from './ParkDialog'
-import { IValidationSchema } from './ParkDialog/schema'
+import { defaultValues, validationSchema, IValidationSchema } from './schema'
 
 const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 	const [open, setIsOpen] = useState(false)
@@ -20,18 +22,40 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 		setIsOpen(true)
 	}
 
+	const {
+		handleSubmit,
+		control,
+		reset,
+		watch,
+		formState: { errors },
+	} = useForm({
+		mode: 'all',
+		reValidateMode: 'onChange',
+		defaultValues,
+		resolver: yupResolver(validationSchema),
+	})
+
 	const onSubmit = async (data: IValidationSchema) => {
 		setSubmitting(true)
-		const { parkedType, vehicle } = data
+		const { parkedType, vehicle, parkNow, parkTime } = data
 		try {
+			// get neareast slot
 			const getParking = await SlotsAPI.getNearest(parkedType, entranceTitle)
 
+			// throw error if no slot available
 			if (!getParking) {
 				throw new Error('There is no available slot')
 			}
 
+			// park on that nearest slot
 			const nearestParkingSlotId = getParking.data[0].id
-			SlotsAPI.parkSlot(nearestParkingSlotId, parkedType, vehicle)
+			await SlotsAPI.parkSlot(
+				nearestParkingSlotId,
+				parkedType,
+				vehicle,
+				parkNow || false,
+				parkTime || ''
+			)
 
 			enqueueSnackbar('Vehicle has been successfully parked.', {
 				variant: 'success',
@@ -43,6 +67,7 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 		}
 		setSubmitting(false)
 		handleClose()
+		reset()
 	}
 
 	return (
@@ -53,8 +78,15 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 				entranceTitle={entranceTitle}
 				onSubmit={onSubmit}
 				submitting={submitting}
+				handleSubmit={handleSubmit}
+				control={control}
+				errors={errors}
+				watch={watch}
+				reset={reset}
 			/>
-			<Button onClick={() => handleOpen()}>Park ({entranceTitle})</Button>
+			<Button onClick={() => handleOpen()}>
+				<Typography variant='h3'>Park ({entranceTitle})</Typography>
+			</Button>
 		</div>
 	)
 }

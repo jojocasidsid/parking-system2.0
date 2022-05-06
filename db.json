@@ -112,7 +112,7 @@
 			"type": 3,
 			"vehicle": "123-456",
 			"parkedType": 3,
-			"parkTime": "2022-05-06T09:51:21.468Z",
+			"parkTime": "",
 			"unparkTime": null
 		},
 		{
@@ -121,9 +121,9 @@
 			"east": 4,
 			"south": 4,
 			"type": 2,
-			"vehicle": "",
-			"parkedType": 0,
-			"parkTime": null,
+			"vehicle": "321-2321",
+			"parkedType": 2,
+			"parkTime": "",
 			"unparkTime": null
 		},
 		{

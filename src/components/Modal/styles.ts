@@ -4,8 +4,15 @@ import {
 	DialogActions,
 	DialogTitle,
 	Divider,
+	Dialog,
 } from '@mui/material'
 import IconButton from '@mui/material/IconButton'
+
+export const StyledDialog = styled(Dialog)`
+	& .MuiPaper-root {
+		width: 60vw;
+	}
+`
 
 export const StyledIconButton = styled(IconButton)`
 	position: absolute;

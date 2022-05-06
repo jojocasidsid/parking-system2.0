@@ -43,7 +43,9 @@ const Parking = () => {
 								<Slot key={key} data={row} handleLeave={(id) => handleLeave(id)} />
 							))}
 					</SlotsWrapper>
+					<Entrance entranceTitle='East' slotRefetch={slotRefetch} />
 				</ParkingWrapper>
+				<Entrance entranceTitle='South' slotRefetch={slotRefetch} />
 			</StyledRoot>
 		</Page>
 	)

@@ -2,7 +2,7 @@ import React from 'react'
 import { AdapterMoment } from '@mui/x-date-pickers/AdapterMoment'
 
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider'
-import { DateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
+import { DateTimePicker as MUIDateTimePicker } from '@mui/x-date-pickers/DateTimePicker'
 import { Control, Controller } from 'react-hook-form'
 import { StyledInput, StyledLabel, StyledRoot } from './styles'
 
@@ -19,7 +19,7 @@ interface IProps {
 	disabled?: boolean
 }
 
-const DatePicker = ({
+const DateTimePicker = ({
 	fullWidth,
 	label,
 	required,
@@ -41,7 +41,7 @@ const DatePicker = ({
 						</StyledLabel>
 					)}
 
-					<DateTimePicker
+					<MUIDateTimePicker
 						value={field.value}
 						onChange={field.onChange}
 						disabled={disabled}
@@ -64,4 +64,4 @@ const DatePicker = ({
 	</LocalizationProvider>
 )
 
-export default DatePicker
+export default DateTimePicker

@@ -1,8 +1,9 @@
 import * as React from 'react'
 
-import { Dialog, DialogProps } from '@mui/material'
+import { DialogProps } from '@mui/material'
 import CloseIcon from '@mui/icons-material/Close'
 import {
+	StyledDialog,
 	StyledIconButton,
 	StyledDialogTitle,
 	StyledDialogContent,
@@ -59,13 +60,12 @@ const Modal = ({
 	paperProps,
 	...dialogProps
 }: IProps) => (
-	<Dialog
+	<StyledDialog
 		PaperProps={paperProps}
 		onClose={handleClose}
 		aria-labelledby='customized-dialog-title'
 		open={open}
 		{...dialogProps}
-		maxWidth='xl'
 	>
 		{title && (
 			<>
@@ -78,7 +78,7 @@ const Modal = ({
 
 		<StyledDialogContent>{children}</StyledDialogContent>
 		{actions && <StyledDialogActions>{actions}</StyledDialogActions>}
-	</Dialog>
+	</StyledDialog>
 )
 
 export default Modal

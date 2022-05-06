@@ -1,49 +1,32 @@
 import React from 'react'
-import Modal from 'components/Modal'
 
 import { Grid } from '@mui/material'
 import FormSubmit from 'components/FormSubmit'
-import { yupResolver } from '@hookform/resolvers/yup'
-import { useForm } from 'react-hook-form'
 import Select from 'components/Select'
 import Input from 'components/Input'
+import Checkbox from 'components/Checkbox'
+import Modal from 'components/Modal'
+
 import { IProps } from './types'
-import { IValidationSchema, validationSchema } from './schema'
 
 const ParkDialog = ({
 	open,
-	handleClose,
 	entranceTitle,
-	onSubmit,
 	submitting,
+	control,
+	errors,
+	onSubmit,
+	handleClose,
+	handleSubmit,
+	watch,
+	reset,
 }: IProps) => {
-	const values: IValidationSchema = {
-		vehicle: '',
-		parkedType: 0,
-	}
-	const {
-		handleSubmit,
-		control,
-		reset,
-		watch,
-		formState: { errors },
-	} = useForm({
-		mode: 'all',
-		reValidateMode: 'onChange',
-		defaultValues: values,
-		resolver: yupResolver(validationSchema),
-	})
-
 	const onClose = () => {
 		if (!submitting) {
 			handleClose()
 			reset()
 		}
 	}
-
-	console.log(watch('parkedType'))
-	console.log(watch('vehicle'))
-	console.log(errors)
 
 	return (
 		<Modal
@@ -76,6 +59,28 @@ const ParkDialog = ({
 								{ label: 'MP', value: 2 },
 								{ label: 'LP', value: 3 },
 							]}
+						/>
+					</Grid>
+
+					<Grid item xs={6}>
+						<Input
+							control={control}
+							type='datetime-local'
+							error={errors.parkTime?.message}
+							required
+							fullWidth
+							name='parkTime'
+							label='Parking Time'
+							disabled={watch('parkNow')}
+						/>
+					</Grid>
+
+					<Grid item xs={6}>
+						<Checkbox
+							control={control}
+							name='parkNow'
+							label='Park Now'
+							defaultValue
 						/>
 					</Grid>
 				</Grid>
