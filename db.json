@@ -110,9 +110,9 @@
 			"east": 5,
 			"south": 5,
 			"type": 3,
-			"vehicle": "CJT5454",
-			"parkedType": 2,
-			"parkTime": "2022-05-06T17:36:58.242Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -285,6 +285,22 @@
 			"transactionDate": "2022-05-07T01:37:33+08:00",
 			"vehicle": "8FMS348",
 			"id": 2
+		},
+		{
+			"price": 140,
+			"hours": 4,
+			"parkingType": 3,
+			"transactionDate": "2022-05-07T04:38:21+08:00",
+			"vehicle": "CJT5454",
+			"id": 3
+		},
+		{
+			"price": 100,
+			"hours": 1,
+			"parkingType": 3,
+			"transactionDate": "2022-05-07T04:38:53+08:00",
+			"vehicle": "CJT5454",
+			"id": 4
 		}
 	]
 }

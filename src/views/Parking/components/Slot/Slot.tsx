@@ -58,7 +58,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 			</Typography>
 			<br />
 
-			<Typography variant='h3'>Distances: (West East, South) </Typography>
+			<Typography variant='h3'>Distances: (West, East, South) </Typography>
 			<Typography variant='h4'>
 				[ {pluralize('unit', data.west, true)} ,{' '}
 				{pluralize('unit', data.east, true)} , {pluralize('unit', data.south, true)}{' '}

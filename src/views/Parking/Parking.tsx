@@ -1,21 +1,32 @@
 import React, { useState } from 'react'
+
+// packages
+import _ from 'lodash'
+import moment from 'moment'
 import { useSnackbar } from 'notistack'
-import useFetchSlot from 'queries/useFetchSlot'
-import { ISlotData } from 'views/Parking/components/Slot/types'
+import { Typography } from '@mui/material'
+
+// apis
+import { SlotsApi, EarningsApi } from 'apis'
+
+// queries
+import { useFetchSlot, useFetchEarnings } from 'queries'
+
+// helpers
+import { computeTransaction, getSumBykey, getTimeDifference } from 'helpers'
+
+// components
 import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'
-import useFetchEarnings from 'queries/useFetchEarnings'
-import { Typography } from '@mui/material'
-import { computeTransaction, getSumBykey, getTimeDifference } from 'helpers'
-import SlotsAPI from 'apis/Slots/SlotsApi'
-import _ from 'lodash'
-import EarningsApi from 'apis/Earnings/EarningsApi'
-import moment from 'moment'
-import Slot from './components/Slot'
-
-import { SlotsWrapper, ParkingWrapper, StyledRoot } from './styles'
 import Entrance from './components/Entrance'
 import UnparkDialog from './components/UnparkDialog'
+import Slot from './components/Slot'
+
+// interface
+import { ISlotData } from './components/Slot/types'
+
+// styles
+import { SlotsWrapper, ParkingWrapper, StyledRoot } from './styles'
 
 const Parking = () => {
 	const { enqueueSnackbar } = useSnackbar()
@@ -54,7 +65,7 @@ const Parking = () => {
 		try {
 			if (!leaveTargetId) throw new Error('This is not a valid slot')
 
-			const slot = await SlotsAPI.getSlot(leaveTargetId)
+			const slot = await SlotsApi.getSlot(leaveTargetId)
 			const { parkedType, parkTime, vehicle, type } = _.get(slot, 'data')
 
 			if (!parkedType || !vehicle)
@@ -98,8 +109,8 @@ const Parking = () => {
 				})
 			}
 
-			if (leaveNow) await SlotsAPI.leaveSlot(leaveTargetId)
-			else await SlotsAPI.setLeaveSlot(leaveTargetId, leaveDate)
+			if (leaveNow) await SlotsApi.leaveSlot(leaveTargetId)
+			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveDate)
 
 			slotRefetch()
 			earningsRefetch()
