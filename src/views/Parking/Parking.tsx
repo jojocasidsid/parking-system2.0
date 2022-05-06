@@ -92,7 +92,7 @@ const Parking = () => {
 				const totalFeesForAllTransactions = computeTransaction(totalHours, type)
 
 				const totalFees = totalFeesForAllTransactions - pastTotalFees
-
+				// store the exact hour not the rounded 1
 				await EarningsApi.add({
 					price: totalFees,
 					hours: currentTimeDiff,
