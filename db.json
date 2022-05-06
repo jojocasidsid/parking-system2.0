@@ -110,8 +110,8 @@
 			"east": 5,
 			"south": 5,
 			"type": 3,
-			"vehicle": "123-456",
-			"parkedType": 3,
+			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": "",
 			"unparkTime": null
 		},
@@ -121,8 +121,8 @@
 			"east": 4,
 			"south": 4,
 			"type": 2,
-			"vehicle": "321-2321",
-			"parkedType": 2,
+			"vehicle": "",
+			"parkedType": 0,
 			"parkTime": "",
 			"unparkTime": null
 		},

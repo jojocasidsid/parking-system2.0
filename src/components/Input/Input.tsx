@@ -6,6 +6,7 @@ import { IProps } from './types'
 import { StyledInput, StyledLabel, StyledRoot } from './styles'
 
 const Input = ({
+	autoComplete = 'off',
 	control,
 	defaultValue,
 	error,
@@ -21,7 +22,6 @@ const Input = ({
 	multiline,
 	rows,
 	maxLength,
-
 	hideErrorMessage = false,
 	inputRef,
 }: IProps) => (
@@ -63,6 +63,7 @@ const Input = ({
 					multiline={multiline}
 					rows={rows}
 					inputRef={inputRef}
+					autoComplete={autoComplete}
 				/>
 			</StyledRoot>
 		)}

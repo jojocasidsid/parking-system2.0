@@ -3,6 +3,7 @@ import { Control } from 'react-hook-form'
 
 export interface IProps {
 	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	autoComplete?: string
 	control?: Control<any, object> // To do: change any type
 	defaultValue?: string
 	disabled?: boolean
@@ -19,6 +20,7 @@ export interface IProps {
 	rows?: number
 	small?: boolean
 	maxLength?: number
+
 	hideErrorMessage?: boolean
 	inputRef?: React.RefObject<HTMLInputElement | HTMLTextAreaElement | null>
 }

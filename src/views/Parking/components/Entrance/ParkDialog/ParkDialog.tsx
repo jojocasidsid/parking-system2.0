@@ -44,6 +44,7 @@ const ParkDialog = ({
 							fullWidth
 							name='vehicle'
 							label="Vehicle's Plate No."
+							autoComplete='off'
 						/>
 					</Grid>
 					<Grid item xs={12}>
@@ -67,7 +68,6 @@ const ParkDialog = ({
 							control={control}
 							type='datetime-local'
 							error={errors.parkTime?.message}
-							required
 							fullWidth
 							name='parkTime'
 							label='Parking Time'
