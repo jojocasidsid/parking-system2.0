@@ -269,18 +269,12 @@
 			"unparkTime": null
 		}
 	],
-	"transactions": [
+	"earnings": [
 		{
 			"hours": 1,
 			"vehicle": "XYZ-123",
 			"transactionDate": "2022-05-02T08:07:42.059Z",
-			"price": ""
-		},
-		{
-			"hours": 1,
-			"vehicle": "",
-			"transactionDate": "2022-05-02T08:08:04.904Z",
-			"price": ""
+			"price": "20"
 		}
 	]
 }

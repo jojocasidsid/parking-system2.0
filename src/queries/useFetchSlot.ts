@@ -4,7 +4,7 @@ import moment from 'moment'
 import SlotsAPI from 'apis/Slots/SlotsApi'
 import { ISlotData } from 'views/Parking/components/Slot/types'
 
-export const useFetchSlot = () =>
+const useFetchSlot = () =>
 	useQuery(['slot'], () => SlotsAPI.list(), {
 		onSuccess: async (response) => {
 			await Promise.all(
@@ -27,3 +27,5 @@ export const useFetchSlot = () =>
 		refetchInterval: 10000,
 		refetchIntervalInBackground: false,
 	})
+
+export default useFetchSlot

@@ -2,8 +2,8 @@ import React from 'react'
 import { Control } from 'react-hook-form'
 
 export interface IProps {
-	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	autoComplete?: string
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
 	control?: Control<any, object> // To do: change any type
 	defaultValue?: string
 	disabled?: boolean

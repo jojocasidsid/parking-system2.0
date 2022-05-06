@@ -5,7 +5,7 @@ exports[`Input component should create snapshot correctly 1`] = `
   className="css-evn1e9"
 >
   <label
-    className="css-k7657j"
+    className="css-1nafofr"
     htmlFor="test"
   >
     Test
@@ -45,11 +45,17 @@ exports[`Input component should create snapshot correctly 1`] = `
       tabIndex={-1}
       value=""
     />
-    <img
-      alt="arrow-down"
-      className="MuiSelect-icon MuiSelect-iconOutlined css-yihkjv-MuiSelect-icon"
-      src="/assets/arrow-down.svg"
-    />
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+      data-testid="ArrowDropDownIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M7 10l5 5 5-5z"
+      />
+    </svg>
     <fieldset
       aria-hidden={true}
       className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"

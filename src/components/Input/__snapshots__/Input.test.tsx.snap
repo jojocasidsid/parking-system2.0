@@ -23,6 +23,7 @@ exports[`Input component should create snapshot correctly 1`] = `
     >
       <input
         aria-invalid={false}
+        autoComplete="off"
         autoFocus={false}
         className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
         disabled={false}
