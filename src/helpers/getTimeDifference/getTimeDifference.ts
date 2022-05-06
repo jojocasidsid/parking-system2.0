@@ -6,9 +6,7 @@ const getTimeDifference = (parkTime: string) => {
 
 	const timeBetween = moment.duration(dateNow.diff(dateParked))
 
-	const timeDifferenceinHours = Math.ceil(timeBetween.asHours())
-
-	return timeDifferenceinHours
+	return timeBetween.asHours()
 }
 
 export default getTimeDifference

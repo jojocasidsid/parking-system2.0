@@ -79,7 +79,9 @@ const Parking = () => {
 			const isThereTransaction = Boolean(transactions.length)
 
 			const currentTimeDiff = getTimeDifference(parkTime)
-			const currentFee = computeTransaction(currentTimeDiff, type)
+			const currentTmeDiffRoundUp = Math.ceil(currentTimeDiff)
+
+			const currentFee = computeTransaction(currentTmeDiffRoundUp, type)
 
 			if (isThereTransaction) {
 				// apply continous rate
