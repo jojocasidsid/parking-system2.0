@@ -26,7 +26,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 	return (
 		<ThumbnailWrapper>
 			<div>
-				<StyledImage color='primary' />
+				<StyledImage color={data.parkedType ? 'primary' : 'secondary'} />
 			</div>
 			<Typography variant='h3'>
 				Slot:{' '}
@@ -40,6 +40,15 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				Parking Type: {numbertToType(data.type)} <br />
 				<br />
 			</Typography>
+			<br />
+			{data.parkedType ? (
+				<Typography variant='h4'>
+					Vehicle No: {data.vehicle} <br />
+					<br />
+				</Typography>
+			) : (
+				<div />
+			)}
 
 			<Typography variant='h3'>Distances</Typography>
 			<Typography variant='h4'>
@@ -53,8 +62,8 @@ const Slot = ({ data, handleLeave }: IProps) => {
 
 			{data.parkedType ? (
 				<>
-					<Typography variant='h3'>Hours: {timeDiff}</Typography>
-					<Typography variant='h3'>
+					<Typography variant='h3'>{pluralize('Hour', timeDiff, true)}</Typography>
+					<Typography variant='body'>
 						Date Time: {moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 					</Typography>
 				</>

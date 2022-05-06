@@ -21,5 +21,5 @@ export const SlotsWrapper = styled('div')`
 	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	grid-gap: 10px;
-	width: 90vw;
+	width: 80vw;
 `

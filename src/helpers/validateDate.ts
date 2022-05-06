@@ -11,7 +11,7 @@ const validateDate = (value: string | undefined) => {
 		}
 		return false
 	}
-	return false
+	return true
 }
 
 export default validateDate
