@@ -18,6 +18,7 @@ import { computeTransaction, getSumBykey, getTimeDifference } from 'helpers'
 // components
 import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'
+import continousRateCalculation from 'helpers/continousRateCalculation/continousRateCalculation'
 import Entrance from './components/Entrance'
 import UnparkDialog from './components/UnparkDialog'
 import Slot from './components/Slot'
@@ -85,14 +86,12 @@ const Parking = () => {
 
 			if (isThereTransaction) {
 				// apply continous rate
-				const pastHours = getSumBykey(transactions, 'hours')
-				const totalHours = pastHours + currentTimeDiff
-
-				const pastTotalFees = computeTransaction(pastHours, type)
-				const totalFeesForAllTransactions = computeTransaction(totalHours, type)
-
-				const totalFees = totalFeesForAllTransactions - pastTotalFees
-				// store the exact hour not the rounded 1
+				const totalFees = continousRateCalculation(
+					transactions,
+					currentTimeDiff,
+					type
+				)
+				// store the exact hour not the rounded one
 				await EarningsApi.add({
 					price: totalFees,
 					hours: currentTimeDiff,
