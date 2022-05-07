@@ -3,9 +3,10 @@ import moment from 'moment'
 
 import SlotsAPI from 'apis/Slots/SlotsApi'
 import { ISlotData } from 'views/Parking/Slot/types'
+import { queryKeyHelper } from 'helpers'
 
 const useFetchSlot = () =>
-	useQuery(['slot'], () => SlotsAPI.list(), {
+	useQuery([queryKeyHelper.slots], () => SlotsAPI.list(), {
 		onSuccess: async (response) => {
 			await Promise.all(
 				response.data.map(async (row: ISlotData) => {

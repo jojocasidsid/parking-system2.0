@@ -1,15 +1,21 @@
 import React, { useEffect } from 'react'
 
-import Modal from 'components/Modal'
-import FormSubmit from 'components/FormSubmit'
+// packages
+import { Grid } from '@mui/material'
 import { useSnackbar } from 'notistack'
-
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
-import { Grid } from '@mui/material'
+
+// components
+import Modal from 'components/Modal'
 import Checkbox from 'components/Checkbox'
 import Input from 'components/Input'
+import FormSubmit from 'components/FormSubmit'
 
+// helpers
+import { snackbarMesages } from 'helpers'
+
+// schema
 import { validationSchema, defaultValues, IValidationSchema } from './schema'
 
 import { IProps } from './types'
@@ -45,12 +51,9 @@ const UnparkDialog = ({
 	const onSubmit = (data: IValidationSchema) => {
 		const isLeaveNowCheckLaterBlank = !data.leaveNow && data.unparkTime === ''
 		if (isLeaveNowCheckLaterBlank) {
-			enqueueSnackbar(
-				'Leave Later field has no values while leaveNow checkbox is unchecked',
-				{
-					variant: 'error',
-				}
-			)
+			enqueueSnackbar(snackbarMesages.leaveUncheck, {
+				variant: 'error',
+			})
 			return
 		}
 

@@ -13,6 +13,7 @@ import {
 	computeTransaction,
 	getTimeDifference,
 	continousRateCalculation,
+	snackbarMesages,
 } from 'helpers'
 
 const useParkingPrompt = (
@@ -72,7 +73,7 @@ const useParkingPrompt = (
 			.then(() => {
 				slotRefetch()
 				closeModalReservation()
-				enqueueSnackbar('Reservation has been successfully deleted', {
+				enqueueSnackbar(snackbarMesages.deleteReservation, {
 					variant: 'success',
 				})
 			})
@@ -86,7 +87,7 @@ const useParkingPrompt = (
 		setAwaitingResponse(true)
 
 		try {
-			if (!leaveTargetId) throw new Error('This is not a valid slot')
+			if (!leaveTargetId) throw new Error(snackbarMesages.noValidSlot)
 
 			// check slot for validation
 			const slot = await SlotsApi.getSlot(leaveTargetId)
@@ -94,11 +95,11 @@ const useParkingPrompt = (
 
 			const formatLeaveTime = moment(leaveTime).format()
 			if (parkTime >= formatLeaveTime) {
-				throw new Error('Leave time should be later than park time')
+				throw new Error(snackbarMesages.parkTimeValidation)
 			}
 			// throw error if no car parked
 			if (!parkedType || !vehicle) {
-				throw new Error('There is no car parked in here')
+				throw new Error(snackbarMesages.noCarParked)
 			}
 
 			// get all transactions within 1 hour

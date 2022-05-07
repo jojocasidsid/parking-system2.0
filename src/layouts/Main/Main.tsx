@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link, Outlet } from 'react-router-dom'
 import { Box, Button, Toolbar, Typography } from '@mui/material'
-import URLHelpers from 'helpers/url/url'
+import URLHelpers from 'helpers/constants/url'
 import { StyledImage, StyledAppBar, StyledWrapper } from './styles'
 
 const Main = () => (

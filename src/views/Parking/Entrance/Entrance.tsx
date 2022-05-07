@@ -6,6 +6,7 @@ import { SlotsApi } from 'apis'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useForm } from 'react-hook-form'
 import _ from 'lodash'
+import { snackbarMesages } from 'helpers'
 import { IProps } from './types'
 import ParkDialog from './ParkDialog'
 import { defaultValues, validationSchema, IValidationSchema } from './schema'
@@ -45,14 +46,14 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 			const isVehicle = _.get(searchVehicle, 'data', []).length
 
 			if (isVehicle) {
-				throw new Error(`Vehicle (${vehicle}) is already parked`)
+				throw new Error(snackbarMesages.alreadyParked(vehicle))
 			}
 
 			const getParking = await SlotsApi.getNearest(parkedType, entranceTitle)
 
 			// throw error if no slot available
 			if (!getParking.data.length) {
-				throw new Error('There is no available slot')
+				throw new Error(snackbarMesages.noSlot)
 			}
 
 			// park on that nearest slot
@@ -65,7 +66,7 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 				parkTime || ''
 			)
 
-			enqueueSnackbar('Vehicle has been successfully parked.', {
+			enqueueSnackbar(snackbarMesages.vehicleParked, {
 				variant: 'success',
 			})
 

@@ -5,7 +5,7 @@ import {
 	Route,
 	Navigate,
 } from 'react-router-dom'
-import URLHelpers from 'helpers/url/url'
+import URLHelpers from 'helpers/constants/url'
 
 import MainLayout from 'layouts/Main'
 import MinimalLayout from 'layouts/Minimal'
