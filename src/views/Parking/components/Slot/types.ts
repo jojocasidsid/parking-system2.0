@@ -13,4 +13,5 @@ export interface ISlotData {
 export interface IProps {
 	data: ISlotData
 	handleLeave: (id: number) => void
+	handleCancelReservation: (id: number) => void
 }

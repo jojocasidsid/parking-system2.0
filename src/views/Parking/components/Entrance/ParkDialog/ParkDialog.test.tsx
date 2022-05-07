@@ -38,6 +38,7 @@ describe('Park dialog', () => {
 					handleClose={() => {}}
 					entranceTitle='South'
 					onSubmit={(data: IValidationSchema) => {
+						// eslint-disable-next-line no-console
 						console.log(data)
 					}}
 					submitting={false}

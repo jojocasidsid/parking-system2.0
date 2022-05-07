@@ -1,0 +1,177 @@
+import { useState } from 'react'
+
+// packages\
+import _ from 'lodash'
+import moment from 'moment'
+import { useSnackbar } from 'notistack'
+
+// slots
+import { SlotsApi, EarningsApi } from 'apis'
+
+// helpers
+import {
+	computeTransaction,
+	getTimeDifference,
+	continousRateCalculation,
+} from 'helpers'
+
+const useParkingPrompt = (
+	slotRefetch: () => void,
+	earningsRefetch: () => void
+) => {
+	const { enqueueSnackbar } = useSnackbar()
+
+	const [openLeave, setOpenLeave] = useState(false)
+	const [awaitingResponse, setAwaitingResponse] = useState(false)
+	const [leaveTargetId, setLeaveTargetId] = useState(0)
+
+	const [openCancelModal, setOpenCancelModal] = useState(false)
+	const [cancelTargetId, setCancelTargetId] = useState(0)
+
+	const openModalReservation = (id: number) => {
+		setOpenCancelModal(true)
+		setCancelTargetId(id)
+	}
+
+	const closeModalReservation = () => {
+		if (!awaitingResponse) {
+			setOpenCancelModal(false)
+			setCancelTargetId(0)
+		}
+	}
+
+	const openModalLeave = (id: number) => {
+		setOpenLeave(true)
+		setLeaveTargetId(id)
+	}
+
+	const closeModalLeave = () => {
+		if (!awaitingResponse) {
+			setOpenLeave(false)
+			setLeaveTargetId(0)
+		}
+	}
+
+	// eslint-disable-next-line @typescript-eslint/no-explicit-any
+	const handleError = (error: any) => {
+		const errorMessage = _.get(error, 'message', '')
+		if (errorMessage) {
+			enqueueSnackbar(errorMessage, {
+				variant: 'error',
+			})
+		} else {
+			enqueueSnackbar('Something went wrong', {
+				variant: 'error',
+			})
+		}
+	}
+
+	const onConfirmCancelReservation = () => {
+		setAwaitingResponse(true)
+		SlotsApi.leaveSlot(cancelTargetId)
+			.then(() => {
+				slotRefetch()
+				closeModalReservation()
+				enqueueSnackbar('Reservation has been successfully deleted', {
+					variant: 'success',
+				})
+			})
+			.catch((error) => {
+				handleError(error)
+			})
+		setAwaitingResponse(false)
+	}
+
+	const onConfirmLeave = async (leaveNow: boolean, leaveTime: string) => {
+		setAwaitingResponse(true)
+
+		try {
+			if (!leaveTargetId) throw new Error('This is not a valid slot')
+
+			// check slot for validation
+			const slot = await SlotsApi.getSlot(leaveTargetId)
+			const { parkedType, parkTime, vehicle, type } = _.get(slot, 'data')
+
+			if (parkTime >= leaveTime) {
+				throw new Error('Leave time should be later than park time')
+			}
+			// throw error if no car parked
+			if (!parkedType || !vehicle) {
+				throw new Error('There is no car parked in here')
+			}
+
+			// get all transactions within 1 hour
+			const getVehicleTransactionsWithin1Hour =
+				await EarningsApi.getVehicleTransactionsWithin1Hour(vehicle)
+			const transactions = _.get(getVehicleTransactionsWithin1Hour, 'data', [])
+
+			// compute current fee
+			const currentTimeDiff = getTimeDifference(parkTime, leaveTime)
+			const currentTmeDiffRoundUp = Math.ceil(currentTimeDiff)
+			const currentFee = computeTransaction(currentTmeDiffRoundUp, type)
+
+			// check if there is transaction
+			const isThereTransaction = Boolean(transactions.length)
+			if (isThereTransaction) {
+				// apply continous rate
+				const totalFees = continousRateCalculation(
+					transactions,
+					currentTimeDiff,
+					type,
+					leaveTime
+				)
+				// store the exact hour not the rounded one
+				await EarningsApi.add({
+					price: totalFees,
+					hours: currentTimeDiff,
+					parkTime,
+					parkingType: type,
+					transactionDate: moment().format(),
+					vehicle,
+				})
+			} else {
+				// not eligible for continous rate
+				await EarningsApi.add({
+					price: currentFee,
+					hours: currentTimeDiff,
+					parkTime,
+					parkingType: type,
+					transactionDate: moment().format(),
+					vehicle,
+				})
+			}
+
+			const isLeaveNow = leaveNow || leaveTime === ''
+			if (isLeaveNow) await SlotsApi.leaveSlot(leaveTargetId)
+			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveTime)
+
+			slotRefetch()
+			earningsRefetch()
+		} catch (error) {
+			handleError(error)
+		}
+
+		setAwaitingResponse(false)
+	}
+
+	return {
+		awaitingResponse,
+
+		openLeave,
+		openCancelModal,
+
+		leaveTargetId,
+		cancelTargetId,
+
+		openModalReservation,
+		closeModalReservation,
+
+		openModalLeave,
+		closeModalLeave,
+
+		onConfirmCancelReservation,
+		onConfirmLeave,
+	}
+}
+
+export default useParkingPrompt

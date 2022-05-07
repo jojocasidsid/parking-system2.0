@@ -12,16 +12,20 @@ import { IProps } from './types'
 
 import { StyledImage, StyledBody } from './styles'
 
-const Slot = ({ data, handleLeave }: IProps) => {
+const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 	const [timeDiff, setTimeDiff] = useState(0)
+	const [timeReservation, setTimeReservation] = useState(0)
 
 	useEffect(() => {
 		const dateNow = moment()
 		if (data.parkTime) {
 			const dateParked = moment(data.parkTime)
 			const timeBetween = moment.duration(dateNow.diff(dateParked))
-
-			setTimeDiff(Math.ceil(timeBetween.asHours()))
+			const timeDiffRounded = Math.ceil(timeBetween.asHours())
+			setTimeDiff(timeDiffRounded)
+			if (Math.ceil(timeBetween.asHours()) < 0) {
+				setTimeReservation(Math.abs(timeDiffRounded))
+			}
 		}
 	}, [JSON.stringify(data)])
 
@@ -42,6 +46,8 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				) : (
 					<Typography variant='h3'>Available</Typography>
 				)}
+
+				{timeReservation > 0 && <Typography variant='h3'>Reserved!</Typography>}
 
 				<Typography variant='h3'>
 					Parking Type: {numbertToType(data.type)} <br />
@@ -65,7 +71,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				)}
 
 				<br />
-				{data.parkedType && !data.unparkTime ? (
+				{data.parkedType && !data.unparkTime && !timeReservation ? (
 					<Button variant='contained' fullWidth onClick={() => handleLeave(data.id)}>
 						<Typography variant='h4' color='white'>
 							Leave
@@ -73,6 +79,18 @@ const Slot = ({ data, handleLeave }: IProps) => {
 					</Button>
 				) : (
 					<div />
+				)}
+
+				{timeReservation > 0 && (
+					<Button
+						variant='contained'
+						fullWidth
+						onClick={() => handleCancelReservation(data.id)}
+					>
+						<Typography variant='h4' color='white'>
+							Cancel Reservation
+						</Typography>
+					</Button>
 				)}
 
 				{data.unparkTime ? (
