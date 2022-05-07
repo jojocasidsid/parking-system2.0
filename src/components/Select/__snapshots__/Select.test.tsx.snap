@@ -5,7 +5,7 @@ exports[`Input component should create snapshot correctly 1`] = `
   className="css-evn1e9"
 >
   <label
-    className="css-1nafofr"
+    className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-1gc1k2x-MuiFormLabel-root-MuiInputLabel-root"
     htmlFor="test"
   >
     Test

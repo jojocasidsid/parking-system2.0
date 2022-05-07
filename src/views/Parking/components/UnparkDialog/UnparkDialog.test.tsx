@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
 import React from 'react'
 import { ThemeProvider } from '@mui/material/styles'
+import { SnackbarProvider } from 'notistack'
 
 // config
 import theme from 'config/theme'
@@ -13,16 +14,26 @@ describe('Unpark Component', () => {
 	it('should render unpark component without crashing', () => {
 		const { baseElement } = render(
 			<ThemeProvider theme={theme}>
-				<UnparkDialog
-					open
-					slot={1}
-					submitting={false}
-					onConfirmLeave={(leaveNow: boolean, leaveDate: string) => {
-						console.log(leaveNow)
-						console.log(leaveDate)
+				<SnackbarProvider
+					maxSnack={5}
+					anchorOrigin={{
+						vertical: 'bottom',
+						horizontal: 'right',
 					}}
-					handleClose={() => {}}
-				/>
+					preventDuplicate
+					autoHideDuration={5000}
+				>
+					<UnparkDialog
+						open
+						slot={1}
+						submitting={false}
+						onConfirmLeave={(leaveNow: boolean, leaveDate: string) => {
+							console.log(leaveNow)
+							console.log(leaveDate)
+						}}
+						handleClose={() => {}}
+					/>
+				</SnackbarProvider>
 			</ThemeProvider>
 		)
 

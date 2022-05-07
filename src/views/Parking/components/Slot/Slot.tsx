@@ -31,10 +31,8 @@ const Slot = ({ data, handleLeave }: IProps) => {
 				<StyledImage color={data.parkedType ? 'primary' : 'secondary'} />
 			</StyledSlot>
 
-			{data.parkedType ? (
+			{data.parkedType !== 0 && (
 				<Typography variant='h4'>Plate: {data.vehicle}</Typography>
-			) : (
-				<div />
 			)}
 
 			<Typography variant='h3'>
@@ -56,8 +54,8 @@ const Slot = ({ data, handleLeave }: IProps) => {
 
 			<br />
 			{data.parkedType ? (
-				<Typography variant='h3'>
-					{pluralize('Hour', timeDiff, true)}/
+				<Typography variant='h4'>
+					{pluralize('Hour', timeDiff, true)} /{' '}
 					{moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 				</Typography>
 			) : (

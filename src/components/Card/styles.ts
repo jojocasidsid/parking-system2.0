@@ -1,7 +1,6 @@
 import styled from '@emotion/styled'
-import DirectionsCarIcon from '@mui/icons-material/DirectionsCar'
 
-export const ThumbnailWrapper = styled('div')`
+export const CardWrapper = styled('div')`
 	display: flex;
 	justify-content: flex-start;
 	align-items: center;
@@ -10,12 +9,8 @@ export const ThumbnailWrapper = styled('div')`
 	border-radius: 30px;
 	border: 2px solid ${({ theme }) => theme.palette.secondary.main};
 `
-export const StyledSlot = styled('div')`
+export const StyledSlotHeader = styled('div')`
 	display: flex;
 	justify-content: space-around;
 	align-items: center;
-`
-
-export const StyledImage = styled(DirectionsCarIcon)`
-	font-size: 45px;
 `
