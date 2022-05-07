@@ -48,19 +48,15 @@ const Entrance = ({ entranceTitle, slotRefetch }: IProps) => {
 				throw new Error(`Vehicle (${vehicle}) is already parked`)
 			}
 
-			// get neareast slot
-			console.log({ parkedType })
-			console.log({ entranceTitle })
 			const getParking = await SlotsApi.getNearest(parkedType, entranceTitle)
-			console.log({ getParking })
+
 			// throw error if no slot available
-			if (getParking.data.length) {
+			if (!getParking.data.length) {
 				throw new Error('There is no available slot')
 			}
 
 			// park on that nearest slot
 			const nearestParkingSlotId = getParking.data[0].id
-			console.log({ nearestParkingSlotId })
 			await SlotsApi.parkSlot(
 				nearestParkingSlotId,
 				parkedType,

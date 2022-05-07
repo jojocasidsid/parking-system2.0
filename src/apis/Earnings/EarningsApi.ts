@@ -10,6 +10,8 @@ const EarningsApi = {
 			params: {
 				transactionDate_gte: moment().subtract(1, 'hours'),
 				vehicle,
+				_sort: 'parkTime',
+				_order: 'asc',
 			},
 		}),
 }

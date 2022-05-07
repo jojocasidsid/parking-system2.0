@@ -2,12 +2,13 @@ import React, { useEffect } from 'react'
 
 import Modal from 'components/Modal'
 import FormSubmit from 'components/FormSubmit'
+import { useSnackbar } from 'notistack'
+
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { Grid } from '@mui/material'
 import Checkbox from 'components/Checkbox'
 import Input from 'components/Input'
-import moment from 'moment'
 
 import { validationSchema, defaultValues, IValidationSchema } from './schema'
 
@@ -20,6 +21,8 @@ const UnparkDialog = ({
 	handleClose,
 	onConfirmLeave,
 }: IProps) => {
+	const { enqueueSnackbar } = useSnackbar()
+
 	const {
 		handleSubmit,
 		control,
@@ -39,8 +42,19 @@ const UnparkDialog = ({
 		reset()
 	}
 
-	const onSubmit = async (data: IValidationSchema) => {
-		onConfirmLeave(data.leaveNow || false, data.unparkTime || moment().format())
+	const onSubmit = (data: IValidationSchema) => {
+		const isLeaveNowCheckLaterBlank = !data.leaveNow && data.unparkTime === ''
+		if (isLeaveNowCheckLaterBlank) {
+			enqueueSnackbar(
+				'Leave Later field has no values while leaveNow checkbox is unchecked',
+				{
+					variant: 'error',
+				}
+			)
+			return
+		}
+
+		onConfirmLeave(data.leaveNow || false, data.unparkTime || '')
 		reset()
 		onClose()
 	}
@@ -53,19 +67,10 @@ const UnparkDialog = ({
 	}, [leaveNow])
 
 	return (
-		<Modal open={open} title={`Leave  Slot (${slot})`} handleClose={onClose}>
+		<Modal open={open} title={`Leave Slot (${slot})`} handleClose={onClose}>
 			<form onSubmit={handleSubmit(onSubmit)}>
 				<Grid container rowSpacing={2} columnSpacing={2.5}>
-					<Grid item xs={6}>
-						<Checkbox
-							control={control}
-							name='leaveNow'
-							label='Leave Immediately'
-							defaultValue
-						/>
-					</Grid>
-
-					<Grid item xs={6}>
+					<Grid item xs={12}>
 						<Input
 							control={control}
 							type='datetime-local'
@@ -74,6 +79,15 @@ const UnparkDialog = ({
 							name='unparkTime'
 							label='Leave Later'
 							disabled={leaveNow}
+						/>
+					</Grid>
+
+					<Grid item xs={12}>
+						<Checkbox
+							control={control}
+							name='leaveNow'
+							label='Leave Immediately'
+							defaultValue
 						/>
 					</Grid>
 

@@ -31,7 +31,7 @@ const SlotsAPI = {
 		const requestData = {
 			vehicle,
 			parkedType,
-			parkTime: parkNow ? moment() : parkTime,
+			parkTime: parkNow ? moment() : moment(parkTime).format(),
 			unparkTime: null,
 		}
 		return api.patch(`/slots/${id}`, requestData)
@@ -49,7 +49,7 @@ const SlotsAPI = {
 
 	setLeaveSlot: (id: number, unparkTime: string) => {
 		const requestData = {
-			unparkTime,
+			unparkTime: moment(unparkTime).format(),
 		}
 		return api.patch(`/slots/${id}`, requestData)
 	},

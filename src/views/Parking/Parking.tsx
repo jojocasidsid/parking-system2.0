@@ -117,7 +117,8 @@ const Parking = () => {
 				})
 			}
 
-			if (leaveNow) await SlotsApi.leaveSlot(leaveTargetId)
+			const isLeaveNow = leaveNow || leaveTime === ''
+			if (isLeaveNow) await SlotsApi.leaveSlot(leaveTargetId)
 			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveTime)
 
 			slotRefetch()
