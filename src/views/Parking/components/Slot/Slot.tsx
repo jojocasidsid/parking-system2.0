@@ -23,7 +23,7 @@ const Slot = ({ data, handleLeave }: IProps) => {
 
 			setTimeDiff(Math.ceil(timeBetween.asHours()))
 		}
-	}, [data])
+	}, [JSON.stringify(data)])
 
 	return (
 		<Card

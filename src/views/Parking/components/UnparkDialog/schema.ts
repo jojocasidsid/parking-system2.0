@@ -1,16 +1,7 @@
 import * as yup from 'yup'
 
-import validateLaterDate from 'helpers/validateLaterDate/validateLaterDate'
-
-const ERROR_DATE_INVALID =
-	'Park time should be later than the current date and time'
-
 export const validationSchema = yup.object({
-	unparkTime: yup.string().test({
-		name: 'validateLaterDate',
-		test: validateLaterDate,
-		message: ERROR_DATE_INVALID,
-	}),
+	unparkTime: yup.string(),
 	leaveNow: yup.boolean(),
 })
 

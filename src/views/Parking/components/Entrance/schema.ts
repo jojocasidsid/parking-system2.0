@@ -1,18 +1,11 @@
-import validateEarlierDate from 'helpers/validateEarlierDate/validateEarlierDate'
 import * as yup from 'yup'
 
 const ERROR_FIELD_REQUIRED = 'This field is required'
-const ERROR_DATE_INVALID =
-	'Park time should be earlier than the current date and time'
 
 export const validationSchema = yup.object({
 	vehicle: yup.string().required(ERROR_FIELD_REQUIRED),
 	parkedType: yup.number().positive().required(ERROR_FIELD_REQUIRED),
-	parkTime: yup.string().test({
-		name: 'validateEarlierDate',
-		test: validateEarlierDate,
-		message: ERROR_DATE_INVALID,
-	}),
+	parkTime: yup.string(),
 	parkNow: yup.boolean(),
 })
 

@@ -70,24 +70,30 @@ const Parking = () => {
 		try {
 			if (!leaveTargetId) throw new Error('This is not a valid slot')
 
+			// check slot for validation
 			const slot = await SlotsApi.getSlot(leaveTargetId)
 			const { parkedType, parkTime, vehicle, type } = _.get(slot, 'data')
 
-			if (!parkedType || !vehicle)
+			if (parkTime >= leaveTime) {
+				throw new Error('Leave time should be later than park time')
+			}
+			// throw error if no car parked
+			if (!parkedType || !vehicle) {
 				throw new Error('There is no car parked in here')
+			}
 
+			// get all transactions within 1 hour
 			const getVehicleTransactionsWithin1Hour =
 				await EarningsApi.getVehicleTransactionsWithin1Hour(vehicle)
-
 			const transactions = _.get(getVehicleTransactionsWithin1Hour, 'data', [])
 
-			const isThereTransaction = Boolean(transactions.length)
-
+			// compute current fee
 			const currentTimeDiff = getTimeDifference(parkTime, leaveTime)
 			const currentTmeDiffRoundUp = Math.ceil(currentTimeDiff)
-
 			const currentFee = computeTransaction(currentTmeDiffRoundUp, type)
 
+			// check if there is transaction
+			const isThereTransaction = Boolean(transactions.length)
 			if (isThereTransaction) {
 				// apply continous rate
 				const totalFees = continousRateCalculation(
