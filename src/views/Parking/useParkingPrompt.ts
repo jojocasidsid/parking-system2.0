@@ -92,7 +92,8 @@ const useParkingPrompt = (
 			const slot = await SlotsApi.getSlot(leaveTargetId)
 			const { parkedType, parkTime, vehicle, type } = _.get(slot, 'data')
 
-			if (parkTime >= leaveTime) {
+			const formatLeaveTime = moment(leaveTime).format()
+			if (parkTime >= formatLeaveTime) {
 				throw new Error('Leave time should be later than park time')
 			}
 			// throw error if no car parked
@@ -143,7 +144,7 @@ const useParkingPrompt = (
 
 			const isLeaveNow = leaveNow || leaveTime === ''
 			if (isLeaveNow) await SlotsApi.leaveSlot(leaveTargetId)
-			else await SlotsApi.setLeaveSlot(leaveTargetId, leaveTime)
+			else await SlotsApi.setLeaveSlot(leaveTargetId, formatLeaveTime)
 
 			slotRefetch()
 			earningsRefetch()

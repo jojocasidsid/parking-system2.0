@@ -2,7 +2,7 @@ import { useQuery } from 'react-query'
 import moment from 'moment'
 
 import SlotsAPI from 'apis/Slots/SlotsApi'
-import { ISlotData } from 'views/Parking/components/Slot/types'
+import { ISlotData } from 'views/Parking/Slot/types'
 
 const useFetchSlot = () =>
 	useQuery(['slot'], () => SlotsAPI.list(), {

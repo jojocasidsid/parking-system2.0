@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 
 import { Button, Typography } from '@mui/material'
 import moment from 'moment'
@@ -8,6 +8,7 @@ import numbertToType from 'helpers/numberToType/numberToType'
 
 import Card from 'components/Card'
 
+import { getTimeDifference } from 'helpers'
 import { IProps } from './types'
 
 import { StyledImage, StyledBody } from './styles'
@@ -15,19 +16,33 @@ import { StyledImage, StyledBody } from './styles'
 const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 	const [timeDiff, setTimeDiff] = useState(0)
 	const [timeReservation, setTimeReservation] = useState(0)
+	const [trigger, setTrigger] = useState(0)
+	const counter = useRef(0)
 
 	useEffect(() => {
-		const dateNow = moment()
+		const dateNow = moment().format()
 		if (data.parkTime) {
-			const dateParked = moment(data.parkTime)
-			const timeBetween = moment.duration(dateNow.diff(dateParked))
-			const timeDiffRounded = Math.ceil(timeBetween.asHours())
-			setTimeDiff(timeDiffRounded)
-			if (Math.ceil(timeBetween.asHours()) < 0) {
-				setTimeReservation(Math.abs(timeDiffRounded))
+			const timeBetween = getTimeDifference(data.parkTime).toFixed(2)
+			setTimeDiff(Number(timeBetween))
+
+			const timeUntilReserved = getTimeDifference(dateNow, data.parkTime).toFixed(
+				2
+			)
+
+			if (Number(timeUntilReserved) > 0) {
+				setTimeReservation(Number(timeUntilReserved))
 			}
 		}
-	}, [JSON.stringify(data)])
+
+		// trigger useEffect every 20 seconds
+		if (counter.current < 20) {
+			counter.current += 1
+			const timer = setTimeout(() => setTrigger(trigger + 1), 1000)
+			return () => clearTimeout(timer)
+		}
+
+		return () => {}
+	}, [JSON.stringify(data), trigger])
 
 	return (
 		<Card
@@ -41,13 +56,12 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 			<StyledBody>
 				{data.parkedType !== 0 ? (
 					<Typography variant='h4'>
-						Plate: {data.vehicle} || Type: {`${numbertToType(data.parkedType)}`}
+						Plate: {data.vehicle} || Type: {`${numbertToType(data.parkedType)}`} ||{' '}
+						{Boolean(timeReservation) && 'Reserved!'}
 					</Typography>
 				) : (
 					<Typography variant='h3'>Available</Typography>
 				)}
-
-				{timeReservation > 0 && <Typography variant='h3'>Reserved!</Typography>}
 
 				<Typography variant='h3'>
 					Parking Type: {numbertToType(data.type)} <br />
@@ -63,8 +77,10 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 				<br />
 				{data.parkedType ? (
 					<Typography variant='h4'>
-						{pluralize('Hour', timeDiff, true)} /{' '}
-						{moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
+						{timeReservation
+							? pluralize('Hour', timeReservation, true)
+							: pluralize('Hour', timeDiff, true)}{' '}
+						/ {moment(data.parkTime).format('YYYY-MM-DD HH:mm:ss')}{' '}
 					</Typography>
 				) : (
 					<div />
@@ -81,10 +97,11 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 					<div />
 				)}
 
-				{timeReservation > 0 && (
+				{Boolean(timeReservation) && (
 					<Button
 						variant='contained'
 						fullWidth
+						color='secondary'
 						onClick={() => handleCancelReservation(data.id)}
 					>
 						<Typography variant='h4' color='white'>

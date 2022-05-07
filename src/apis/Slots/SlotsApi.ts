@@ -49,7 +49,7 @@ const SlotsAPI = {
 
 	setLeaveSlot: (id: number, unparkTime: string) => {
 		const requestData = {
-			unparkTime: moment(unparkTime).format(),
+			unparkTime,
 		}
 		return api.patch(`/slots/${id}`, requestData)
 	},

@@ -6,9 +6,9 @@
 			"east": 7,
 			"south": 7,
 			"type": 1,
-			"vehicle": "53369C",
+			"vehicle": "3MNF13",
 			"parkedType": 1,
-			"parkTime": "2022-05-07T00:15:25.019Z",
+			"parkTime": "2022-05-07T21:02:48.569Z",
 			"unparkTime": null
 		},
 		{
@@ -17,9 +17,9 @@
 			"east": 6,
 			"south": 6,
 			"type": 3,
-			"vehicle": "BC2M3N",
-			"parkedType": 3,
-			"parkTime": "2022-05-06T23:56:11.957Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -28,9 +28,9 @@
 			"east": 5,
 			"south": 5,
 			"type": 1,
-			"vehicle": "B32287Z",
-			"parkedType": 1,
-			"parkTime": "2022-05-07T00:01:50.090Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -39,9 +39,9 @@
 			"east": 4,
 			"south": 6,
 			"type": 3,
-			"vehicle": "757YBB",
-			"parkedType": 3,
-			"parkTime": "2022-05-06T23:55:49.903Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -50,9 +50,9 @@
 			"east": 3,
 			"south": 7,
 			"type": 2,
-			"vehicle": "SC22129",
-			"parkedType": 1,
-			"parkTime": "2022-05-07T00:13:57.078Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -61,9 +61,9 @@
 			"east": 6,
 			"south": 6,
 			"type": 2,
-			"vehicle": "73513K2",
+			"vehicle": "2",
 			"parkedType": 1,
-			"parkTime": "2022-05-07T00:15:02.068Z",
+			"parkTime": "2022-05-08T05:42:00+08:00",
 			"unparkTime": null
 		},
 		{
@@ -72,9 +72,9 @@
 			"east": 5,
 			"south": 5,
 			"type": 1,
-			"vehicle": "3MNF13",
-			"parkedType": 1,
-			"parkTime": "2022-05-07T00:14:52.416Z",
+			"vehicle": "",
+			"parkedType": 0,
+			"parkTime": null,
 			"unparkTime": null
 		},
 		{
@@ -375,6 +375,87 @@
 			"transactionDate": "2022-05-07T08:11:21+08:00",
 			"vehicle": "KVX6431",
 			"id": 11
+		},
+		{
+			"price": null,
+			"hours": null,
+			"parkTime": "2022-05-07T00:15:25.019Z",
+			"parkingType": 1,
+			"transactionDate": "2022-05-08T04:31:05+08:00",
+			"vehicle": "53369C",
+			"id": 12
+		},
+		{
+			"price": 1840,
+			"hours": 20.610053055555557,
+			"parkTime": "2022-05-06T23:56:11.957Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-08T04:32:48+08:00",
+			"vehicle": "BC2M3N",
+			"id": 13
+		},
+		{
+			"price": 400,
+			"hours": 20.51872138888889,
+			"parkTime": "2022-05-07T00:01:50.090Z",
+			"parkingType": 1,
+			"transactionDate": "2022-05-08T04:32:57+08:00",
+			"vehicle": "B32287Z",
+			"id": 14
+		},
+		{
+			"price": 1840,
+			"hours": 20.622962222222224,
+			"parkTime": "2022-05-06T23:55:49.903Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-08T04:33:12+08:00",
+			"vehicle": "757YBB",
+			"id": 15
+		},
+		{
+			"price": 1120,
+			"hours": 20.322280833333334,
+			"parkTime": "2022-05-07T00:13:57.078Z",
+			"parkingType": 2,
+			"transactionDate": "2022-05-08T04:33:17+08:00",
+			"vehicle": "SC22129",
+			"id": 16
+		},
+		{
+			"price": 1120,
+			"hours": 20.3505575,
+			"parkTime": "2022-05-07T00:15:02.068Z",
+			"parkingType": 2,
+			"transactionDate": "2022-05-08T04:36:04+08:00",
+			"vehicle": "73513K2",
+			"id": 17
+		},
+		{
+			"price": 40,
+			"hours": 0.006313333333333333,
+			"parkTime": "2022-05-07T20:39:06.800Z",
+			"parkingType": 3,
+			"transactionDate": "2022-05-08T04:39:29+08:00",
+			"vehicle": "222",
+			"id": 18
+		},
+		{
+			"price": 0,
+			"hours": -0.9604302777777778,
+			"parkTime": "2022-05-08T05:40:00+08:00",
+			"parkingType": 2,
+			"transactionDate": "2022-05-08T04:42:22+08:00",
+			"vehicle": "222",
+			"id": 19
+		},
+		{
+			"price": 400,
+			"hours": 20.793177777777778,
+			"parkTime": "2022-05-07T00:14:52.416Z",
+			"parkingType": 1,
+			"transactionDate": "2022-05-08T05:02:27+08:00",
+			"vehicle": "3MNF13",
+			"id": 20
 		}
 	]
 }

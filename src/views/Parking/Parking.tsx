@@ -13,15 +13,15 @@ import { getSumBykey } from 'helpers'
 import LoadingIndicator from 'components/LoadingIndicator'
 import Page from 'components/Page'
 import PromptModal from 'components/PromptModal'
-import Entrance from './components/Entrance'
-import UnparkDialog from './components/UnparkDialog'
-import Slot from './components/Slot'
+import Entrance from './Entrance'
+import UnparkDialog from './UnparkDialog'
+import Slot from './Slot'
 
 // custom hooks
 import useParkingPrompt from './useParkingPrompt'
 
 // interface
-import { ISlotData } from './components/Slot/types'
+import { ISlotData } from './Slot/types'
 
 // styles
 import { SlotsWrapper, ParkingWrapper, StyledRoot } from './styles'
