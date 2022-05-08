@@ -1,21 +1,8 @@
 import * as React from 'react'
-import Button from '@mui/material/Button'
-import CircularProgress from '@mui/material/CircularProgress'
-
+import { Button, CircularProgress } from '@mui/material'
 import Modal from 'components/Modal'
-
+import { IProps } from './types'
 import { Message } from './styles'
-
-export interface IProps {
-	title: string
-	message: string
-	open: boolean
-	handleClose: () => void
-	handleConfirm: () => void
-	processing?: boolean
-	paperProps?: {}
-	closeButtonTitle?: string
-}
 
 const PromptModal = (props: IProps) => {
 	const {

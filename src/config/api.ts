@@ -17,11 +17,9 @@ api.interceptors.request.use((config) => {
 	return config
 })
 
+//	totalCount: response.headers['x-total-count'],
 api.interceptors.response.use(
-	(response) => ({
-		data: response.data,
-		totalCount: response.headers['x-total-count'],
-	}),
+	(response) => response,
 	(error: AxiosError) => {
 		const errorDetails = {
 			status: error.response?.data.errors.status,

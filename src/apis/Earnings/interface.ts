@@ -6,3 +6,18 @@ export interface ISlotData {
 	parkingType: number
 	parkTime: string
 }
+
+export interface ITransactionList {
+	id: number
+	vehicle: string
+	price: number
+	transactionDate: string
+	parkingType: number
+	parkTime: string
+	hours: number
+}
+
+export interface ITransactionPropertiesResponse {
+	data: Array<ITransactionList>
+	totalCount?: number
+}

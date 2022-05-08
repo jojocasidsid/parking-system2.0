@@ -3,7 +3,7 @@ import getTimeDifference from 'helpers/getTimeDifference/getTimeDifference'
 import moment from 'moment'
 
 interface IArr {
-	[key: string]: string | null | number
+	[key: string]: string | number
 }
 
 const continousRateCalculation = (

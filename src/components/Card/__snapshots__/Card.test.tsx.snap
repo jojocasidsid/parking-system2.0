@@ -1,0 +1,20 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Card Component should render card component without crashing 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1>
+      Hello World
+    </h1>
+  </div>
+  <div>
+    <h1>
+      Hello World
+    </h1>
+  </div>
+</div>
+`;

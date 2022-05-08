@@ -40,10 +40,8 @@ const Select = ({
 					disabled={disabled}
 					onChange={onChange}
 					onBlur={onBlur}
-					value={value === -1 ? '' : value} // Workaround for out-of-range warnings, initial values for select inputs of number types are -1 as empty strings are not assignable
+					value={value}
 					fullWidth={fullWidth}
-					// eslint-disable-next-line react/no-unstable-nested-components
-
 					error={Boolean(error)}
 				>
 					{options.map((row, id) => (

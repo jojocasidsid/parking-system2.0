@@ -14,7 +14,7 @@ export interface IValidationSchema
 
 export const defaultValues: IValidationSchema = {
 	vehicle: '',
-	parkedType: 0,
+	parkedType: 1,
 	parkTime: '',
 	parkNow: true,
 }

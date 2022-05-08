@@ -16,7 +16,7 @@ const infoLight = '#E5F7FD'
 const rejected = '#FF5353'
 const rejectedLight = '#FEEDEE'
 
-const disabledInput = '#30364314'
+const disabledInput = '#585A5B'
 
 const baseText = '#303643'
 

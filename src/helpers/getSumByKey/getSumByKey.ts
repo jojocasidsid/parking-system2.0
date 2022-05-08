@@ -1,5 +1,5 @@
 interface IArr {
-	[key: string]: string | null | number
+	[key: string]: string | number
 }
 
 const getSumByKey = (arr: IArr[], key: string) =>

@@ -1,0 +1,464 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Slot parking Component should render slot component with available slot 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-17re0f5-MuiTypography-root"
+    >
+      1
+    </h1>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-colorSecondary MuiSvgIcon-fontSizeMedium css-g9ch1l-MuiSvgIcon-root"
+      data-testid="DirectionsCarIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+      />
+    </svg>
+  </div>
+  <div>
+    <div
+      className="css-j5wv8"
+    >
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Available
+      </h3>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Parking Type: 
+        SP
+         
+        <br />
+      </h3>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Distances: [ 
+        1 unit
+         ,
+         
+        1 unit
+         ,
+         
+        1 unit
+         ]
+         
+      </h4>
+      <br />
+      <div />
+      <br />
+      <div />
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slot parking Component should render slot component with later park time 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-17re0f5-MuiTypography-root"
+    >
+      1
+    </h1>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1yauy2g-MuiSvgIcon-root"
+      data-testid="DirectionsCarIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+      />
+    </svg>
+  </div>
+  <div>
+    <div
+      className="css-j5wv8"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Plate: 
+        123-123
+         || Type: 
+        SP
+         ||
+         
+      </h4>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Parking Type: 
+        SP
+         
+        <br />
+      </h3>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Distances: [ 
+        1 unit
+         ,
+         
+        1 unit
+         ,
+         
+        1 unit
+         ]
+         
+      </h4>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        0 Hours
+         
+        / 
+        2030-05-07 06:12:32
+         
+      </h4>
+      <br />
+      <button
+        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1r01nr4-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h4
+          className="MuiTypography-root MuiTypography-h4 css-8kdnk8-MuiTypography-root"
+        >
+          Leave
+        </h4>
+      </button>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slot parking Component should render slot component with park time 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-17re0f5-MuiTypography-root"
+    >
+      1
+    </h1>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1yauy2g-MuiSvgIcon-root"
+      data-testid="DirectionsCarIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+      />
+    </svg>
+  </div>
+  <div>
+    <div
+      className="css-j5wv8"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Plate: 
+        123-123
+         || Type: 
+        SP
+         ||
+         
+      </h4>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Parking Type: 
+        SP
+         
+        <br />
+      </h3>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Distances: [ 
+        1 unit
+         ,
+         
+        1 unit
+         ,
+         
+        1 unit
+         ]
+         
+      </h4>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        35.94 Hours
+         
+        / 
+        2022-05-07 06:12:32
+         
+      </h4>
+      <br />
+      <button
+        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1r01nr4-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h4
+          className="MuiTypography-root MuiTypography-h4 css-8kdnk8-MuiTypography-root"
+        >
+          Leave
+        </h4>
+        <span
+          className="MuiTouchRipple-root css-8je8zh-MuiTouchRipple-root"
+        />
+      </button>
+      <div />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slot parking Component should render slot component with unpark time 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-17re0f5-MuiTypography-root"
+    >
+      1
+    </h1>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1yauy2g-MuiSvgIcon-root"
+      data-testid="DirectionsCarIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+      />
+    </svg>
+  </div>
+  <div>
+    <div
+      className="css-j5wv8"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Plate: 
+        123-123
+         || Type: 
+        SP
+         ||
+         
+      </h4>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Parking Type: 
+        SP
+         
+        <br />
+      </h3>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Distances: [ 
+        1 unit
+         ,
+         
+        1 unit
+         ,
+         
+        1 unit
+         ]
+         
+      </h4>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        35.94 Hours
+         
+        / 
+        2022-05-07 06:12:32
+         
+      </h4>
+      <br />
+      <div />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Unpark Time: 
+        2025-05-07 06:12:32
+         
+      </h4>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Slot parking Component should render slot component without crashing 1`] = `
+<div
+  className="css-joqnyj"
+>
+  <div
+    className="css-e98rco"
+  >
+    <h1
+      className="MuiTypography-root MuiTypography-h1 css-17re0f5-MuiTypography-root"
+    >
+      1
+    </h1>
+    <svg
+      aria-hidden={true}
+      className="MuiSvgIcon-root MuiSvgIcon-colorPrimary MuiSvgIcon-fontSizeMedium css-1yauy2g-MuiSvgIcon-root"
+      data-testid="DirectionsCarIcon"
+      focusable="false"
+      viewBox="0 0 24 24"
+    >
+      <path
+        d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"
+      />
+    </svg>
+  </div>
+  <div>
+    <div
+      className="css-j5wv8"
+    >
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Plate: 
+        123-123
+         || Type: 
+        SP
+         ||
+         
+      </h4>
+      <h3
+        className="MuiTypography-root MuiTypography-h3 css-1dscty8-MuiTypography-root"
+      >
+        Parking Type: 
+        SP
+         
+        <br />
+      </h3>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        Distances: [ 
+        1 unit
+         ,
+         
+        1 unit
+         ,
+         
+        1 unit
+         ]
+         
+      </h4>
+      <br />
+      <h4
+        className="MuiTypography-root MuiTypography-h4 css-rprzex-MuiTypography-root"
+      >
+        0 Hours
+         
+        / 
+        Invalid date
+         
+      </h4>
+      <br />
+      <button
+        className="MuiButton-root MuiButton-contained MuiButton-containedPrimary MuiButton-sizeMedium MuiButton-containedSizeMedium MuiButton-fullWidth MuiButtonBase-root  css-1r01nr4-MuiButtonBase-root-MuiButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <h4
+          className="MuiTypography-root MuiTypography-h4 css-8kdnk8-MuiTypography-root"
+        >
+          Leave
+        </h4>
+      </button>
+      <div />
+    </div>
+  </div>
+</div>
+`;

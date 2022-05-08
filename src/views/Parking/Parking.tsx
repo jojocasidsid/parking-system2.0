@@ -78,7 +78,7 @@ const Parking = () => {
 
 			<StyledRoot>
 				<Typography variant='h1'>
-					Earnings: {earningsData && getSumBykey(earningsData.data, 'price')}{' '}
+					Earnings: {earningsData && getSumBykey(earningsData?.data, 'price')}
 				</Typography>
 				<ParkingWrapper>
 					<Entrance entranceTitle='West' slotRefetch={slotRefetch} />
