@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Body Cell  Component should render Table Body Cell component without crashing 1`] = `
+<tbody
+  className="MuiTableBody-root css-apqrd9-MuiTableBody-root"
+  role={null}
+>
+  <tr
+    className="MuiTableRow-root MuiTableRow-hover css-uwmzjg-MuiTableRow-root"
+    role={null}
+  >
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        1
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        AVM1191
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        2
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        37.51265444444444
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        5840
+      </p>
+    </td>
+    <td
+      aria-sort={null}
+      className="MuiTableCell-root MuiTableCell-body MuiTableCell-sizeMedium css-1sr343r-MuiTableCell-root"
+    >
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-13z16v7-MuiTypography-root"
+      >
+        2022-05-08T21:45:24+08:00
+      </p>
+    </td>
+  </tr>
+</tbody>
+`;

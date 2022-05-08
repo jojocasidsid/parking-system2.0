@@ -75,7 +75,7 @@ exports[`Park dialog should render without any errors 1`] = `
                   class="css-evn1e9"
                 >
                   <label
-                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-1p8am30-MuiFormLabel-root-MuiInputLabel-root"
+                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-uj5iz7-MuiFormLabel-root-MuiInputLabel-root"
                     for="vehicle"
                   >
                     Vehicle's Plate No.
@@ -85,7 +85,7 @@ exports[`Park dialog should render without any errors 1`] = `
                     </span>
                   </label>
                   <div
-                    class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-lp6u9r-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1gpsdyz-MuiFormControl-root-MuiTextField-root"
                   >
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-s1ipka-MuiInputBase-root-MuiOutlinedInput-root"
@@ -124,7 +124,7 @@ exports[`Park dialog should render without any errors 1`] = `
                   class="css-evn1e9"
                 >
                   <label
-                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-1gc1k2x-MuiFormLabel-root-MuiInputLabel-root"
+                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-130mcur-MuiFormLabel-root-MuiInputLabel-root"
                     for="parkedType"
                   >
                     Vehicle Type
@@ -134,7 +134,7 @@ exports[`Park dialog should render without any errors 1`] = `
                     </span>
                   </label>
                   <div
-                    class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-q9ksy9-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+                    class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-uz7mt7-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
                   >
                     <div
                       aria-expanded="false"
@@ -180,7 +180,7 @@ exports[`Park dialog should render without any errors 1`] = `
                     </fieldset>
                   </div>
                   <p
-                    class="MuiFormHelperText-root css-11e8ze7-MuiFormHelperText-root"
+                    class="MuiFormHelperText-root css-j3mdjt-MuiFormHelperText-root"
                   />
                 </div>
               </div>
@@ -194,7 +194,7 @@ exports[`Park dialog should render without any errors 1`] = `
                     class="css-bjmv2m"
                   >
                     <span
-                      class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root Mui-checked css-newr6l-MuiButtonBase-root-MuiCheckbox-root"
+                      class="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root Mui-checked css-1q3ox7e-MuiButtonBase-root-MuiCheckbox-root"
                     >
                       <input
                         checked=""
@@ -232,7 +232,7 @@ exports[`Park dialog should render without any errors 1`] = `
                   class="css-evn1e9"
                 >
                   <label
-                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-1p8am30-MuiFormLabel-root-MuiInputLabel-root"
+                    class="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-uj5iz7-MuiFormLabel-root-MuiInputLabel-root"
                     for="parkTime"
                   >
                     Parking Time
@@ -240,7 +240,7 @@ exports[`Park dialog should render without any errors 1`] = `
                     <span />
                   </label>
                   <div
-                    class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-lp6u9r-MuiFormControl-root-MuiTextField-root"
+                    class="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1gpsdyz-MuiFormControl-root-MuiTextField-root"
                   >
                     <div
                       class="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary Mui-disabled MuiInputBase-fullWidth MuiInputBase-formControl css-s1ipka-MuiInputBase-root-MuiOutlinedInput-root"

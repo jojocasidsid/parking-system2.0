@@ -16,61 +16,57 @@ interface IProps {
 	filters?: IFilters
 	setFilters?: React.Dispatch<React.SetStateAction<IFilters>>
 }
-const Pagination = ({ totalPages, filters, setFilters }: IProps) => {
-	const limit = filters?._limit || totalPages
-
-	return (
-		<Grid
-			item
-			container
-			xs={12}
-			paddingTop={1.5}
-			paddingBottom={1.5}
-			paddingLeft={2.5}
-			paddingRight={2.5}
-		>
-			<Grid item container alignItems='flex-end'>
-				<Grid
-					item
-					container
-					xs='auto'
-					flexDirection='row'
-					spacing={1}
-					alignItems='center'
-				>
-					<Grid item>
-						<StyledTypography>Show</StyledTypography>
-					</Grid>
-					<Grid item>
-						<TableSelect
-							name='_limit'
-							filters={filters}
-							setFilters={setFilters}
-							fieldOptions={SHOW_ITEMS_OPTIONS}
-						/>
-					</Grid>
-					<Grid item>
-						<StyledTypography>transactions</StyledTypography>
-					</Grid>
+const Pagination = ({ totalPages, filters, setFilters }: IProps) => (
+	<Grid
+		item
+		container
+		xs={12}
+		paddingTop={1.5}
+		paddingBottom={1.5}
+		paddingLeft={2.5}
+		paddingRight={2.5}
+	>
+		<Grid item container alignItems='flex-end'>
+			<Grid
+				item
+				container
+				xs='auto'
+				flexDirection='row'
+				spacing={1}
+				alignItems='center'
+			>
+				<Grid item>
+					<StyledTypography>Show</StyledTypography>
 				</Grid>
-				<Grid item xs />
-
-				<Grid item xs='auto' marginLeft={4}>
-					<MuiPagination
-						count={Math.ceil(totalPages / limit)}
-						page={filters?._page || 1}
-						onChange={(event: React.ChangeEvent<unknown>, value: number) =>
-							setFilters &&
-							setFilters((prev: IFilters) => ({
-								...prev,
-								_page: value as number,
-							}))
-						}
+				<Grid item>
+					<TableSelect
+						name='_limit'
+						filters={filters}
+						setFilters={setFilters}
+						fieldOptions={SHOW_ITEMS_OPTIONS}
 					/>
 				</Grid>
+				<Grid item>
+					<StyledTypography>transactions</StyledTypography>
+				</Grid>
+			</Grid>
+			<Grid item xs />
+
+			<Grid item xs='auto' marginLeft={4}>
+				<MuiPagination
+					count={totalPages}
+					page={filters?._page || 1}
+					onChange={(event: React.ChangeEvent<unknown>, value: number) =>
+						setFilters &&
+						setFilters((prev: IFilters) => ({
+							...prev,
+							_page: value as number,
+						}))
+					}
+				/>
 			</Grid>
 		</Grid>
-	)
-}
+	</Grid>
+)
 
 export default Pagination

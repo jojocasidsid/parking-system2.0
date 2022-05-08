@@ -8,7 +8,7 @@ exports[`Checkbox component should create snapshot correctly 1`] = `
     className="css-bjmv2m"
   >
     <span
-      className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root Mui-checked css-newr6l-MuiButtonBase-root-MuiCheckbox-root"
+      className="MuiCheckbox-root MuiCheckbox-colorPrimary MuiButtonBase-root MuiCheckbox-root MuiCheckbox-colorPrimary PrivateSwitchBase-root Mui-checked css-1q3ox7e-MuiButtonBase-root-MuiCheckbox-root"
       onBlur={[Function]}
       onContextMenu={[Function]}
       onDragLeave={[Function]}

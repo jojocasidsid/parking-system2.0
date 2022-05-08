@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import useDebounce from 'hooks/useDebounce'
-import { useNavigate } from 'react-router-dom'
 
 export interface IFilters {
 	_order: 'asc' | 'desc' | undefined
@@ -11,7 +10,6 @@ export interface IFilters {
 }
 
 export default function useListingTable(filterProps?: IFilters) {
-	const navigate = useNavigate()
 	const [filters, setFilters] = useState<IFilters>(
 		filterProps || {
 			_order: 'asc',
@@ -33,15 +31,11 @@ export default function useListingTable(filterProps?: IFilters) {
 		}
 	}, [debouncedFilters])
 
-	const [selected, setSelected] = useState<readonly string[]>([])
-
 	return {
-		navigate,
 		filters,
 		setFilters,
 		loading,
-		selected,
-		setSelected,
+
 		debouncedFilters,
 	}
 }

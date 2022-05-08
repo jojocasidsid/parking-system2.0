@@ -1,0 +1,336 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Pagination Component should render pagination component without crashing 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-grid-xs-12 css-czpcox-MuiGrid-root"
+>
+  <div
+    className="MuiGrid-root MuiGrid-container MuiGrid-item css-10k7qhr-MuiGrid-root"
+  >
+    <div
+      className="MuiGrid-root MuiGrid-container MuiGrid-item MuiGrid-spacing-xs-1 MuiGrid-grid-xs-auto css-14on6sx-MuiGrid-root"
+    >
+      <div
+        className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-62c4vu-MuiTypography-root"
+        >
+          Show
+        </p>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <div
+          className="css-dwoubo"
+        >
+          <div
+            className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary css-1kjct6a-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+            onClick={[Function]}
+          >
+            <div
+              aria-expanded="false"
+              aria-haspopup="listbox"
+              aria-labelledby="_limit"
+              className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input css-jcfq8n-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+              id="_limit"
+              onBlur={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onMouseDown={[Function]}
+              role="button"
+              tabIndex={0}
+            >
+              <span
+                className="notranslate"
+              >
+                ​
+              </span>
+            </div>
+            <input
+              aria-hidden={true}
+              className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+              name="_limit"
+              onAnimationStart={[Function]}
+              onChange={[Function]}
+              tabIndex={-1}
+              value={20}
+            />
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+              data-testid="ArrowDropDownIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M7 10l5 5 5-5z"
+              />
+            </svg>
+            <fieldset
+              aria-hidden={true}
+              className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+            >
+              <legend
+                className="css-hdw1oc"
+              >
+                <span
+                  className="notranslate"
+                >
+                  ​
+                </span>
+              </legend>
+            </fieldset>
+          </div>
+        </div>
+      </div>
+      <div
+        className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+      >
+        <p
+          className="MuiTypography-root MuiTypography-body1 css-62c4vu-MuiTypography-root"
+        >
+          transactions
+        </p>
+      </div>
+    </div>
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-true css-1vd824g-MuiGrid-root"
+    />
+    <div
+      className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-auto css-1tuue3l-MuiGrid-root"
+    >
+      <nav
+        aria-label="pagination navigation"
+        className="MuiPagination-root MuiPagination-text css-1oj2twp-MuiPagination-root"
+      >
+        <ul
+          className="MuiPagination-ul css-wjh20t-MuiPagination-ul"
+        >
+          <li>
+            <button
+              aria-label="Go to previous page"
+              className="MuiButtonBase-root Mui-disabled MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular Mui-disabled MuiPaginationItem-previousNext css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={true}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={-1}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                data-testid="NavigateBeforeIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M15.41 7.41L14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+                />
+              </svg>
+            </button>
+          </li>
+          <li>
+            <button
+              aria-current="true"
+              aria-label="page 1"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular Mui-selected MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              1
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 2"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              2
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 3"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              3
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 4"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              4
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 5"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              5
+            </button>
+          </li>
+          <li>
+            <div
+              className="MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-ellipsis css-fr6g90-MuiPaginationItem-root"
+            >
+              …
+            </div>
+          </li>
+          <li>
+            <button
+              aria-label="Go to page 16"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-page css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              16
+            </button>
+          </li>
+          <li>
+            <button
+              aria-label="Go to next page"
+              className="MuiButtonBase-root MuiPaginationItem-root MuiPaginationItem-sizeMedium MuiPaginationItem-text MuiPaginationItem-circular MuiPaginationItem-previousNext css-1cjqjaa-MuiButtonBase-root-MuiPaginationItem-root"
+              disabled={false}
+              onBlur={[Function]}
+              onClick={[Function]}
+              onContextMenu={[Function]}
+              onDragLeave={[Function]}
+              onFocus={[Function]}
+              onKeyDown={[Function]}
+              onKeyUp={[Function]}
+              onMouseDown={[Function]}
+              onMouseLeave={[Function]}
+              onMouseUp={[Function]}
+              onTouchEnd={[Function]}
+              onTouchMove={[Function]}
+              onTouchStart={[Function]}
+              tabIndex={0}
+              type="button"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiPaginationItem-icon css-g2z002-MuiSvgIcon-root-MuiPaginationItem-icon"
+                data-testid="NavigateNextIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M10 6L8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+                />
+              </svg>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</div>
+`;

@@ -1,29 +1,19 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component should create snapshot correctly 1`] = `
+exports[`Table Selext Component should render Table select component without crashing 1`] = `
 <div
-  className="css-evn1e9"
+  className="css-dwoubo"
 >
-  <label
-    className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-130mcur-MuiFormLabel-root-MuiInputLabel-root"
-    htmlFor="test"
-  >
-    Test
-     
-    <span>
-      *
-    </span>
-  </label>
   <div
-    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth css-uz7mt7-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+    className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary css-1kjct6a-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
     onClick={[Function]}
   >
     <div
       aria-expanded="false"
       aria-haspopup="listbox"
-      aria-labelledby="test"
+      aria-labelledby="_limit"
       className="MuiSelect-select MuiSelect-outlined MuiOutlinedInput-input MuiInputBase-input css-jcfq8n-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
-      id="test"
+      id="_limit"
       onBlur={[Function]}
       onFocus={[Function]}
       onKeyDown={[Function]}
@@ -40,10 +30,11 @@ exports[`Input component should create snapshot correctly 1`] = `
     <input
       aria-hidden={true}
       className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+      name="_limit"
       onAnimationStart={[Function]}
       onChange={[Function]}
       tabIndex={-1}
-      value=""
+      value={20}
     />
     <svg
       aria-hidden={true}
@@ -71,8 +62,5 @@ exports[`Input component should create snapshot correctly 1`] = `
       </legend>
     </fieldset>
   </div>
-  <p
-    className="MuiFormHelperText-root css-j3mdjt-MuiFormHelperText-root"
-  />
 </div>
 `;

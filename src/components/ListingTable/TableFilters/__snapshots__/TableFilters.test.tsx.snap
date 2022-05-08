@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Table Filters  Component should render Table Filters component without crashing 1`] = `
+<div
+  className="MuiGrid-root MuiGrid-item MuiGrid-grid-xs-auto css-1wrgmsj-MuiGrid-root"
+>
+  <div
+    className="css-evn1e9"
+  >
+    <label
+      className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-uj5iz7-MuiFormLabel-root-MuiInputLabel-root"
+      htmlFor="search"
+    >
+      Search
+    </label>
+    <div
+      className="MuiFormControl-root MuiTextField-root css-1yfph09-MuiFormControl-root-MuiTextField-root"
+    >
+      <div
+        className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1k534au-MuiInputBase-root-MuiOutlinedInput-root"
+        disableUnderline={true}
+        onClick={[Function]}
+      >
+        <input
+          aria-invalid={false}
+          autoFocus={false}
+          className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+          disabled={false}
+          id="searchBar"
+          onAnimationStart={[Function]}
+          onBlur={[Function]}
+          onChange={[Function]}
+          onFocus={[Function]}
+          placeholder="Search Transactions"
+          required={false}
+          type="text"
+          value=""
+        />
+        <fieldset
+          aria-hidden={true}
+          className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+        >
+          <legend
+            className="css-hdw1oc"
+          >
+            <span
+              className="notranslate"
+            >
+              ​
+            </span>
+          </legend>
+        </fieldset>
+      </div>
+    </div>
+  </div>
+</div>
+`;

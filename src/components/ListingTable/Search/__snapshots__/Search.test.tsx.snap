@@ -1,39 +1,34 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Input component should create snapshot correctly 1`] = `
+exports[`Search Component should render search component without crashing 1`] = `
 <div
   className="css-evn1e9"
 >
   <label
     className="MuiInputLabel-root MuiInputLabel-animated MuiFormLabel-root MuiFormLabel-colorPrimary css-uj5iz7-MuiFormLabel-root-MuiInputLabel-root"
-    htmlFor="test"
+    htmlFor="search"
   >
-    Test
-     
-    <span>
-      *
-    </span>
+    Search
   </label>
   <div
-    className="MuiFormControl-root MuiFormControl-fullWidth MuiTextField-root css-1gpsdyz-MuiFormControl-root-MuiTextField-root"
+    className="MuiFormControl-root MuiTextField-root css-1yfph09-MuiFormControl-root-MuiTextField-root"
   >
     <div
-      className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-formControl css-s1ipka-MuiInputBase-root-MuiOutlinedInput-root"
+      className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-formControl css-1k534au-MuiInputBase-root-MuiOutlinedInput-root"
+      disableUnderline={true}
       onClick={[Function]}
     >
       <input
         aria-invalid={false}
-        autoComplete="off"
         autoFocus={false}
         className="MuiOutlinedInput-input MuiInputBase-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
         disabled={false}
-        id="test"
-        name="test"
+        id="searchBar"
         onAnimationStart={[Function]}
         onBlur={[Function]}
         onChange={[Function]}
         onFocus={[Function]}
-        placeholder="test"
+        placeholder="search"
         required={false}
         type="text"
         value=""

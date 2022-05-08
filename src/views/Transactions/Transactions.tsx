@@ -27,6 +27,9 @@ const Transactions = () => {
 		debouncedFilters,
 		filters
 	)
+	const totalPages = Math.ceil(
+		Number(EarningsData?.headers['x-total-count']) / filters._limit
+	)
 
 	return (
 		<div>
@@ -39,7 +42,7 @@ const Transactions = () => {
 					filters={filters}
 					setFilters={setFilters}
 					isPagination
-					totalPages={Number(EarningsData?.headers['x-total-count']) || 1}
+					totalPages={totalPages}
 					isLoading={isLoading}
 				/>
 			</Paper>

@@ -36,7 +36,6 @@ describe('Slot parking Component', () => {
 	})
 
 	it('should render slot component with park time', () => {
-		const time: string = '2022-05-06T22:12:32.222Z'
 		const tree = renderer.create(
 			<ThemeProvider theme={theme}>
 				<Slot
@@ -48,7 +47,7 @@ describe('Slot parking Component', () => {
 						vehicle: '123-123',
 						type: 1,
 						parkedType: 1,
-						parkTime: time,
+						parkTime: '',
 						unparkTime: null,
 					}}
 					handleLeave={() => {}}
@@ -61,7 +60,6 @@ describe('Slot parking Component', () => {
 	})
 
 	it('should render slot component with later park time', () => {
-		const time: string = '2030-05-06T22:12:32.222Z'
 		const tree = renderer.create(
 			<ThemeProvider theme={theme}>
 				<Slot
@@ -73,7 +71,7 @@ describe('Slot parking Component', () => {
 						vehicle: '123-123',
 						type: 1,
 						parkedType: 1,
-						parkTime: time,
+						parkTime: '',
 						unparkTime: null,
 					}}
 					handleLeave={() => {}}
@@ -86,7 +84,6 @@ describe('Slot parking Component', () => {
 	})
 
 	it('should render slot component with unpark time', () => {
-		const time: string = '2022-05-06T22:12:32.222Z'
 		const tree = renderer.create(
 			<ThemeProvider theme={theme}>
 				<Slot
@@ -98,8 +95,8 @@ describe('Slot parking Component', () => {
 						vehicle: '123-123',
 						type: 1,
 						parkedType: 1,
-						parkTime: time,
-						unparkTime: '2025-05-06T22:12:32.222Z',
+						parkTime: '',
+						unparkTime: '',
 					}}
 					handleLeave={() => {}}
 					handleCancelReservation={() => {}}
