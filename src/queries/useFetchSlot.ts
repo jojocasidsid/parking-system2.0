@@ -25,7 +25,7 @@ const useFetchSlot = () =>
 		},
 		refetchOnWindowFocus: true,
 		refetchOnMount: true,
-		refetchInterval: 5000,
+		refetchInterval: 10000,
 		refetchIntervalInBackground: false,
 	})
 

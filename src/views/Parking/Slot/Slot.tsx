@@ -32,6 +32,8 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 			if (Number(timeUntilReserved) > 0) {
 				setTimeReservation(Number(timeUntilReserved))
 			}
+		} else {
+			setTimeReservation(0)
 		}
 
 		// trigger useEffect every 20 seconds
@@ -42,7 +44,7 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 		}
 
 		return () => {}
-	}, [JSON.stringify(data), trigger])
+	}, [data, trigger])
 
 	return (
 		<Card
@@ -96,7 +98,6 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 				) : (
 					<div />
 				)}
-
 				{Boolean(timeReservation) && (
 					<Button
 						variant='contained'

@@ -71,11 +71,11 @@ const useParkingPrompt = (
 		setAwaitingResponse(true)
 		SlotsApi.leaveSlot(cancelTargetId)
 			.then(() => {
-				slotRefetch()
 				closeModalReservation()
 				enqueueSnackbar(snackbarMesages.deleteReservation, {
 					variant: 'success',
 				})
+				slotRefetch()
 			})
 			.catch((error) => {
 				handleError(error)

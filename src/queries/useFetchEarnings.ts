@@ -8,7 +8,7 @@ const useFetchEarnings = (key?: IFilters, filters?: IFilters) =>
 	useQuery([queryKeyHelper.earnings, key], () => EarningsApi.list(filters), {
 		refetchOnWindowFocus: true,
 		refetchOnMount: true,
-		refetchInterval: 5000,
+		refetchInterval: 10000,
 		refetchIntervalInBackground: false,
 	})
 

@@ -28,7 +28,11 @@ export const COLUMNS: ITransactionListColums[] = [
 		label: 'Price',
 		sortable: false,
 	},
-
+	{
+		id: 'parkTime',
+		label: 'Parking Time',
+		sortable: true,
+	},
 	{
 		id: 'transactionDate',
 		label: 'Transaction Date',

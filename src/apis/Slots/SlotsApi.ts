@@ -31,7 +31,7 @@ const SlotsAPI = {
 		const requestData = {
 			vehicle,
 			parkedType,
-			parkTime: parkNow ? moment() : moment(parkTime).format(),
+			parkTime: parkNow ? moment().format() : moment(parkTime).format(),
 			unparkTime: null,
 		}
 		return api.patch(`/slots/${id}`, requestData)
