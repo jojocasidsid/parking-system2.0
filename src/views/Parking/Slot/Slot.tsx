@@ -56,8 +56,8 @@ const Slot = ({ data, handleLeave, handleCancelReservation }: IProps) => {
 			<StyledBody>
 				{data.parkedType !== 0 ? (
 					<Typography variant='h4'>
-						Plate: {data.vehicle} || Type: {`${numbertToType(data.parkedType)}`} ||{' '}
-						{Boolean(timeReservation) && 'Reserved!'}
+						Plate: {data.vehicle} || Type: {`${numbertToType(data.parkedType)}`}
+						{Boolean(timeReservation) && '|| Reserved'}
 					</Typography>
 				) : (
 					<Typography variant='h3'>Available</Typography>
