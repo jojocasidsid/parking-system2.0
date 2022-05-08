@@ -2,7 +2,9 @@ export { default as computeTransaction } from './computeTransaction/computeTrans
 export { default as continousRateCalculation } from './continousRateCalculation/continousRateCalculation'
 export { default as getSumBykey } from './getSumByKey/getSumByKey'
 export { default as numberToType } from './numberToType/numberToType'
-export { default as validateDate } from './isEarlierDate/isEarlierDate'
+export { default as isEarlierDate } from './isEarlierDate/isEarlierDate'
+export { default as isLaterDate } from './isLaterDate/isLaterDate'
+
 export { default as getTimeDifference } from './getTimeDifference/getTimeDifference'
 
 // helper

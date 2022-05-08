@@ -5,6 +5,7 @@ export interface ITransactionProperties {
 	transactionDate: string
 	parkingType: number
 	parkTime: string
+	unparkTime: string
 	hours: number
 }
 

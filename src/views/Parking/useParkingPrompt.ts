@@ -83,6 +83,13 @@ const useParkingPrompt = (
 		setAwaitingResponse(false)
 	}
 
+	const getUnparkTime = (leaveNow: boolean, leaveTime: string) => {
+		if (leaveNow) {
+			return moment().format()
+		}
+		return leaveTime
+	}
+
 	const onConfirmLeave = async (leaveNow: boolean, leaveTime: string) => {
 		setAwaitingResponse(true)
 
@@ -127,6 +134,7 @@ const useParkingPrompt = (
 					price: totalFees,
 					hours: currentTimeDiff,
 					parkTime,
+					unparkTime: getUnparkTime(leaveNow, leaveTime),
 					parkingType: type,
 					transactionDate: moment().format(),
 					vehicle,
@@ -137,6 +145,7 @@ const useParkingPrompt = (
 					price: currentFee,
 					hours: currentTimeDiff,
 					parkTime,
+					unparkTime: getUnparkTime(leaveNow, leaveTime),
 					parkingType: type,
 					transactionDate: moment().format(),
 					vehicle,

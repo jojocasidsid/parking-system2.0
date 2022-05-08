@@ -311,6 +311,98 @@ exports[`Transactions Page should render Transaction Page without crashing 1`] =
                     <p
                       className="MuiTypography-root MuiTypography-body1 css-1ydb6uk-MuiTypography-root"
                     >
+                      Parking Time
+                    </p>
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-1vweko9-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                      data-testid="ArrowDropDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="m7 10 5 5 5-5z"
+                      />
+                    </svg>
+                  </span>
+                </th>
+                <th
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-sizeMedium css-13wn5r-MuiTableCell-root"
+                  scope="col"
+                  style={
+                    Object {
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <span
+                    className="MuiButtonBase-root MuiTableSortLabel-root css-1lphovs-MuiButtonBase-root-MuiTableSortLabel-root"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1 css-1ydb6uk-MuiTypography-root"
+                    >
+                      Leave Time
+                    </p>
+                    <svg
+                      aria-hidden={true}
+                      className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiTableSortLabel-icon MuiTableSortLabel-iconDirectionAsc css-1vweko9-MuiSvgIcon-root-MuiTableSortLabel-icon"
+                      data-testid="ArrowDropDownIcon"
+                      focusable="false"
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        d="m7 10 5 5 5-5z"
+                      />
+                    </svg>
+                  </span>
+                </th>
+                <th
+                  aria-sort={null}
+                  className="MuiTableCell-root MuiTableCell-head MuiTableCell-stickyHeader MuiTableCell-sizeMedium css-13wn5r-MuiTableCell-root"
+                  scope="col"
+                  style={
+                    Object {
+                      "whiteSpace": "nowrap",
+                    }
+                  }
+                >
+                  <span
+                    className="MuiButtonBase-root MuiTableSortLabel-root css-1lphovs-MuiButtonBase-root-MuiTableSortLabel-root"
+                    onBlur={[Function]}
+                    onClick={[Function]}
+                    onContextMenu={[Function]}
+                    onDragLeave={[Function]}
+                    onFocus={[Function]}
+                    onKeyDown={[Function]}
+                    onKeyUp={[Function]}
+                    onMouseDown={[Function]}
+                    onMouseLeave={[Function]}
+                    onMouseUp={[Function]}
+                    onTouchEnd={[Function]}
+                    onTouchMove={[Function]}
+                    onTouchStart={[Function]}
+                    role="button"
+                    tabIndex={0}
+                  >
+                    <p
+                      className="MuiTypography-root MuiTypography-body1 css-1ydb6uk-MuiTypography-root"
+                    >
                       Transaction Date
                     </p>
                     <svg

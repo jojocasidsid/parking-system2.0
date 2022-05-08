@@ -5,6 +5,7 @@ export interface ISlotData {
 	vehicle: string
 	parkingType: number
 	parkTime: string
+	unparkTime: string
 }
 
 export interface ITransactionList {
