@@ -1,0 +1,86 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Main layout should render without crashing 1`] = `
+<div
+  className="main-root"
+>
+  <header
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorPrimary MuiAppBar-positionStatic css-vhc8yv-MuiPaper-root-MuiAppBar-root"
+  >
+    <div
+      className="main-container"
+    >
+      <div
+        className="MuiToolbar-root MuiToolbar-regular css-1cndkqf-MuiToolbar-root"
+      >
+        <img
+          alt="logo"
+          className="image css-1t5ihyo"
+          src="/logo.png"
+        />
+        <div
+          className="MuiBox-root css-1h6t86q"
+        >
+          <a
+            className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1k8fnjm-MuiButtonBase-root-MuiButton-root"
+            href="/parking"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+          >
+            <span
+              className="MuiTypography-root MuiTypography-nav css-1ar6jbd-MuiTypography-root"
+            >
+              Parking
+            </span>
+          </a>
+          <a
+            className="MuiButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButtonBase-root  css-1k8fnjm-MuiButtonBase-root-MuiButton-root"
+            href="/transactions"
+            onBlur={[Function]}
+            onClick={[Function]}
+            onContextMenu={[Function]}
+            onDragLeave={[Function]}
+            onFocus={[Function]}
+            onKeyDown={[Function]}
+            onKeyUp={[Function]}
+            onMouseDown={[Function]}
+            onMouseLeave={[Function]}
+            onMouseUp={[Function]}
+            onTouchEnd={[Function]}
+            onTouchMove={[Function]}
+            onTouchStart={[Function]}
+            tabIndex={0}
+          >
+            <span
+              className="MuiTypography-root MuiTypography-nav css-1ar6jbd-MuiTypography-root"
+            >
+              Transactions
+            </span>
+          </a>
+        </div>
+        <div
+          className="MuiBox-root css-k6tewu"
+        />
+        <div
+          className="MuiBox-root css-2uchni"
+        />
+      </div>
+    </div>
+  </header>
+  <div
+    className="css-xfm92q"
+  />
+</div>
+`;
