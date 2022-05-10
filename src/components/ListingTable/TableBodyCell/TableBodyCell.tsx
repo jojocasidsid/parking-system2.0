@@ -18,13 +18,25 @@ const TableBodyCell = <Row extends IRows, Column extends IColumns<Row>>({
 	<TableBody>
 		{rows.map((row, rowIndex: number) => (
 			<StyledTableRow key={`row-${rowIndex}`} hover>
-				{columns.map((column: Column, columnIndex: number) => (
-					<Primary
-						key={`${row[column.id]}-${rowIndex}-${columnIndex}`}
-						row={row}
-						column={column}
-					/>
-				))}
+				{columns.map((column: Column, columnIndex: number) => {
+					if (column.type === 'dateTime') {
+						return (
+							<Primary
+								key={`${row[column.id]}-${rowIndex}-${columnIndex}`}
+								row={row}
+								column={column}
+								dateTime
+							/>
+						)
+					}
+					return (
+						<Primary
+							key={`${row[column.id]}-${rowIndex}-${columnIndex}`}
+							row={row}
+							column={column}
+						/>
+					)
+				})}
 			</StyledTableRow>
 		))}
 	</TableBody>

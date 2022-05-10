@@ -3,7 +3,7 @@ import React from 'react'
 export interface IColumnProperties {
 	id: string
 	label: string
-	type?: 'primary'
+	type?: 'primary' | 'dateTime'
 	sortable: boolean
 }
 

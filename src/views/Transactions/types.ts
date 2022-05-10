@@ -20,6 +20,6 @@ export interface IListTransactions<Entity> {
 export interface ITransactionListColums {
 	id: keyof ITransactionProperties | ''
 	label: string
-	type?: 'primary'
+	type?: 'primary' | 'dateTime'
 	sortable: boolean
 }

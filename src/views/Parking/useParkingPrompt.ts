@@ -87,7 +87,7 @@ const useParkingPrompt = (
 		if (leaveNow) {
 			return moment().format()
 		}
-		return leaveTime
+		return moment(leaveTime).format()
 	}
 
 	const onConfirmLeave = async (leaveNow: boolean, leaveTime: string) => {
@@ -111,7 +111,7 @@ const useParkingPrompt = (
 
 			// get all transactions within 1 hour
 			const getVehicleTransactionsWithin1Hour =
-				await EarningsApi.getVehicleTransactionsWithin1Hour(vehicle)
+				await EarningsApi.getVehicleTransactionsWithin1Hour(vehicle, parkTime)
 			const transactions = _.get(getVehicleTransactionsWithin1Hour, 'data', [])
 
 			// compute current fee
